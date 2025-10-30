@@ -1,0 +1,18 @@
+{
+  "insurance": {
+    "he": "ענפי ביטוח",
+    "en": "Insurance branches"
+  },
+  "about": {
+    "he": "אודות",
+    "en": "About"
+  },
+  "news": {
+    "he": "מה חדש?",
+    "en": "What's new?"
+  },
+  "client": {
+    "he": "שירות לקוח",
+    "en": "Client service"
+  }
+}

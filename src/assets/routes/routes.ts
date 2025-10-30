@@ -1,10 +1,11 @@
 // routes.ts
 import React from 'react'
+import { Language } from '../../types/system/Languages'
 
 import { Home } from '../../pages/Home/Home'
 
 export interface Route {
-  title: string
+  title: Language
   path: string
   element: React.ComponentType
   icon: React.ComponentType
@@ -12,28 +13,36 @@ export interface Route {
 
 import HomeIcon from '@mui/icons-material/Home'
 
+import headerJson from '../jsons/header.json'
+
 export const routes: Route[] = [
+  // {
+  //   title: 'Home',
+  //   path: '/',
+  //   element: Home,
+  //   icon: HomeIcon,
+  // },
   {
-    title: 'Home',
-    path: '/',
+    title: headerJson.insurance,
+    path: '/insurance',
     element: Home,
     icon: HomeIcon,
   },
   {
-    title: 'Home',
-    path: '/',
+    title: headerJson.about,
+    path: '/about',
     element: Home,
     icon: HomeIcon,
   },
   {
-    title: 'Home',
-    path: '/',
+    title: headerJson.news,
+    path: '/news',
     element: Home,
     icon: HomeIcon,
   },
   {
-    title: 'Home',
-    path: '/',
+    title: headerJson.client,
+    path: '/client',
     element: Home,
     icon: HomeIcon,
   },

@@ -12,6 +12,7 @@ import logoImg from '../../../public/logo.png'
 import darkMode from '../../../public/icons/dark-mode.svg'
 import search from '../../../public/icons/search.svg'
 import profile from '../../../public/icons/profile.svg'
+import { Language } from '../../types/system/Languages'
 
 interface AppHeaderProps {
   routes: Route[]
@@ -47,7 +48,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
               {routes.map((route, index) => (
                 <li key={index} onClick={() => navigateToPage(route.path)}>
                   <Link className='bold' to={route.path}>
-                    {route.title}
+                    {route.title[prefs.language as keyof Language]}
                   </Link>
                 </li>
               ))}
