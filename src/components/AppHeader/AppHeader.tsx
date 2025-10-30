@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -16,6 +17,9 @@ import { Language } from '../../types/system/Languages'
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
 import { getLanguageName, smoothScroll } from '../../services/util.service'
 
+import CloseIcon from '@mui/icons-material/Close'
+import SearchIcon from '@mui/icons-material/Search'
+
 import headerJson from '../../assets/jsons/header.json'
 interface AppHeaderProps {
   routes: Route[]
@@ -32,9 +36,19 @@ export function AppHeader({ routes }: AppHeaderProps) {
     (stateSelector: RootState) => stateSelector.systemModule.isHeader
   )
 
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+
   const navigateWithScroll = (path: string) => {
     smoothScroll()
     navigate(path)
+  }
+
+  const openSearch = () => {
+    setIsSearchOpen(true)
+  }
+
+  const closeSearch = () => {
+    setIsSearchOpen(false)
   }
 
   return (
@@ -78,7 +92,12 @@ export function AppHeader({ routes }: AppHeaderProps) {
               )
             }}
           </LanguagePicker>
-          <img src={search} alt='search' className='icon' />
+          <img
+            src={search}
+            alt='search'
+            className='icon'
+            onClick={openSearch}
+          />
           <img src={darkMode} alt='dark mode' className='icon' />
         </div>
       </div>
@@ -88,6 +107,17 @@ export function AppHeader({ routes }: AppHeaderProps) {
         <span className='bold'>
           {headerJson.profile[prefs.language as keyof Language]}
         </span>
+      </div>
+      <div className={`input-container ${isSearchOpen ? 'open' : ''}`}>
+        <input
+          type='text'
+          placeholder={
+            headerJson.searchPlaceholder[prefs.language as keyof Language]
+          }
+          className='borderless-input'
+        />
+        <SearchIcon className='icon search-icon pointer' />
+        <CloseIcon onClick={closeSearch} className='icon close-icon pointer' />
       </div>
     </header>
   )

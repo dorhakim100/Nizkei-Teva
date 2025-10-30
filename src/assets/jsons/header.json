@@ -2,5 +2,9 @@
   "profile": {
     "he": "כניסה לאיזור אישי",
     "en": "Login to personal area"
+  },
+  "searchPlaceholder": {
+    "he": "מה ברצונכם לחפש?",
+    "en": "What are you looking for?"
   }
 }

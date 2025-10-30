@@ -91,4 +91,51 @@
       width: 1.8rem;
     }
   }
+
+  .input-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, z-index 0.3s ease-in-out;
+
+    z-index: -1;
+    background-color: $white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .icon {
+      height: 1.8rem;
+      width: 1.8rem;
+
+      &.search-icon {
+        color: $secondary-color;
+      }
+
+      &.close-icon {
+        margin-inline-end: 10px;
+      }
+    }
+
+    &.open {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+
+      &::placeholder {
+        color: $primary-color;
+        font-family: inherit;
+        font-size: 1.2rem;
+      }
+    }
+  }
 }
