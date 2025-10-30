@@ -10,12 +10,20 @@ import { setIsHeader } from '../../store/actions/system.actions'
 import { useSelector } from 'react-redux'
 import { DropdownOption } from '../../types/DropdownOption'
 
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+
 interface DropdownMenuProps {
   options: DropdownOption[]
   renderElement?: () => React.ReactNode
+  renderArrow?: boolean
 }
 
-export function DropdownMenu({ options, renderElement }: DropdownMenuProps) {
+export function DropdownMenu({
+  options,
+  renderElement,
+  renderArrow = false,
+}: DropdownMenuProps) {
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
@@ -53,9 +61,15 @@ export function DropdownMenu({ options, renderElement }: DropdownMenuProps) {
   }
 
   return (
-    <div>
+    <div className='dropdown-menu'>
       <div className='render-element-container pointer' onClick={handleClick}>
+        {renderArrow &&
+          prefs.language === 'en' &&
+          (isHeader ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />)}
         {renderElement ? renderElement() : renderIcon()}
+        {renderArrow &&
+          prefs.language !== 'en' &&
+          (isHeader ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />)}
       </div>
 
       <Menu

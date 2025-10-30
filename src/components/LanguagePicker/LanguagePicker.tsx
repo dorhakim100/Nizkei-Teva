@@ -19,18 +19,26 @@ export function LanguagePicker({ children }: LanguagePickerProps) {
 
   const options: DropdownOption[] = [
     {
-      title: 'English',
-      onClick: () => setPrefs({ ...prefs, language: 'en' }),
+      title: 'עברית',
+      onClick: () => handleLanguageChange('he'),
     },
     {
-      title: 'עברית',
-      onClick: () => setPrefs({ ...prefs, language: 'he' }),
+      title: 'English',
+      onClick: () => handleLanguageChange('en'),
     },
   ]
 
+  function handleLanguageChange(language: string) {
+    setPrefs({ ...prefs, language })
+  }
+
   return (
     <div className='language-picker'>
-      <DropdownMenu options={options} renderElement={children} />
+      <DropdownMenu
+        options={options}
+        renderElement={children}
+        renderArrow={true}
+      />
     </div>
   )
 }

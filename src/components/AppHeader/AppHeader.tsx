@@ -15,6 +15,7 @@ import profile from '../../../public/icons/profile.svg'
 import { Language } from '../../types/system/Languages'
 // import { useNavigateToPage } from '../../hooks/UseNavigateToPage'
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
+import { getLanguageName } from '../../services/util.service'
 
 interface AppHeaderProps {
   routes: Route[]
@@ -70,7 +71,11 @@ export function AppHeader({ routes }: AppHeaderProps) {
           <div className='settings-container'>
             <LanguagePicker>
               {() => {
-                return <div className='language-picker-container'>bla</div>
+                return (
+                  <div className='language-picker-container bold'>
+                    {getLanguageName(prefs.language)}
+                  </div>
+                )
               }}
             </LanguagePicker>
             <img src={darkMode} alt='dark mode' className='icon' />
