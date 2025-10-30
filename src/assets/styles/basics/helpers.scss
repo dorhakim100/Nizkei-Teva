@@ -5,3 +5,26 @@
 .pointer {
   cursor: pointer;
 }
+
+.underline-animation {
+  position: relative;
+
+  &::before {
+    content: '';
+    -webkit-transition: 0.4s ease all;
+    -o-transition: 0.4s ease all;
+    transition: 0.4s ease all;
+    display: block;
+    position: absolute;
+    top: 100%;
+    height: 2px;
+    width: 0;
+    background-color: $primary-color;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}

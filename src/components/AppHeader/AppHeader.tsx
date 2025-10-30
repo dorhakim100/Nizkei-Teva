@@ -54,7 +54,11 @@ export function AppHeader({ routes }: AppHeaderProps) {
               {routes
                 .filter((route) => route.path !== '/')
                 .map((route, index) => (
-                  <li key={index} onClick={() => navigateToPage(route.path)}>
+                  <li
+                    key={index}
+                    onClick={() => navigateToPage(route.path)}
+                    className='underline-animation'
+                  >
                     <Link className='bold' to={route.path}>
                       {route.title[prefs.language as keyof Language]}
                     </Link>
