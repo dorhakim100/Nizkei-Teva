@@ -1,6 +1,5 @@
 @import 'setup/variables.scss';
 @import 'setup/mixins.scss';
-// @import "setup/functions.scss";
 @import 'setup/typography.scss';
 
 @import 'basics/helpers.scss';
@@ -22,5 +21,3 @@
 @import '../../components/PrefsButton/styles/PrefsButton.scss';
 @import '../../components/SearchBar/styles/SearchBar.scss';
 @import '../../components/ShadowOverlay/styles/ShadowOverlay.scss';
-
-@import '../../CustomMui/SignIn/styles/SignIn.scss';

@@ -1,7 +1,13 @@
-// Shades of Red
-$light-red: #f28b82;
-$medium-red: #e53935;
-$dark-red: #b71c1c;
+$primary-color: #452a7a;
+
+$secondary-color: #0ab285;
+
+// Shades of font
+
+$medium-font-gray: #444444;
+$dark-font-gray: #333333;
+
+$white: #ffffff;
 
 // Shades of Gray
 $light-gray: #e0e0e0;
@@ -11,4 +17,5 @@ $very-dark-gray: #1d1d1d;
 
 $neutral-gray: #f5f5f5;
 
-$header-height: 68px;
+$header-height-desktop: 98px;
+$header-height-mobile: 120px;

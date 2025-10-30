@@ -9,10 +9,6 @@ import { smoothScroll } from './services/util.service'
 import { AppHeader } from './components/AppHeader/AppHeader'
 import { AppFooter } from './components/AppFooter/AppFooter.tsx'
 import { Prefs } from './components/Prefs/Prefs'
-import { PrefsButton } from './components/PrefsButton/PrefsButton.tsx'
-
-import { FixedBottomNavigation } from './CustomMui/BottomNavigation/FixedBottomNavigation.tsx'
-
 import { RootState } from './store/store.ts'
 
 import './App.css'
@@ -51,7 +47,6 @@ function App() {
         </Routes>
       </main>
       <AppFooter />
-      <FixedBottomNavigation routes={routes} />
     </>
   )
 }
