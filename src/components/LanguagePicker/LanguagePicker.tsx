@@ -8,7 +8,11 @@ import { setPrefs } from '../../store/actions/system.actions'
 
 import { DropdownOption } from '../../types/DropdownOption'
 
-export function LanguagePicker() {
+interface LanguagePickerProps {
+  children?: () => React.ReactNode
+}
+
+export function LanguagePicker({ children }: LanguagePickerProps) {
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
@@ -26,11 +30,9 @@ export function LanguagePicker() {
 
   return (
     <div className='language-picker'>
-      <DropdownMenu options={options} />
+      <DropdownMenu options={options} renderElement={children} />
     </div>
   )
 }
 
 export default LanguagePicker
-
-

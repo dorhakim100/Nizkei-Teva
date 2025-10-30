@@ -12,9 +12,10 @@ import { DropdownOption } from '../../types/DropdownOption'
 
 interface DropdownMenuProps {
   options: DropdownOption[]
+  renderElement?: () => React.ReactNode
 }
 
-export function DropdownMenu({ options }: DropdownMenuProps) {
+export function DropdownMenu({ options, renderElement }: DropdownMenuProps) {
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
@@ -24,7 +25,7 @@ export function DropdownMenu({ options }: DropdownMenuProps) {
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
     setIsHeader(!isHeader)
   }
@@ -33,8 +34,8 @@ export function DropdownMenu({ options }: DropdownMenuProps) {
     setIsHeader(false)
   }
 
-  return (
-    <div>
+  function renderIcon() {
+    return (
       <IconButton
         sx={{
           p: '10px',
@@ -45,10 +46,17 @@ export function DropdownMenu({ options }: DropdownMenuProps) {
           },
         }}
         aria-label='menu'
-        onClick={handleClick}
       >
         {isHeader ? <MenuOpenIcon /> : <MenuIcon />}
       </IconButton>
+    )
+  }
+
+  return (
+    <div>
+      <div className='render-element-container pointer' onClick={handleClick}>
+        {renderElement ? renderElement() : renderIcon()}
+      </div>
 
       <Menu
         id='basic-menu'
@@ -78,8 +86,8 @@ export function DropdownMenu({ options }: DropdownMenuProps) {
                   backgroundColor: prefs.isDarkMode ? '#111' : '',
                 },
               }}
-              onClick={(): void => {
-                option.onClick()
+              onClick={(event): void => {
+                option.onClick(event)
                 handleClose()
               }}
               key={index}

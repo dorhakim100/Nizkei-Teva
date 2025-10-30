@@ -13,7 +13,8 @@ import darkMode from '../../../public/icons/dark-mode.svg'
 import search from '../../../public/icons/search.svg'
 import profile from '../../../public/icons/profile.svg'
 import { Language } from '../../types/system/Languages'
-import { useNavigateToPage } from '../../hooks/UseNavigateToPage'
+// import { useNavigateToPage } from '../../hooks/UseNavigateToPage'
+import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
 
 interface AppHeaderProps {
   routes: Route[]
@@ -45,7 +46,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
           src={logoImg}
           alt='logo'
           className='logo-img pointer'
-          onClick={useNavigateToPage('/')}
+          onClick={() => navigate('/')}
         />
 
         <div className='navigation-container'>
@@ -67,6 +68,11 @@ export function AppHeader({ routes }: AppHeaderProps) {
             </ul>
           </nav>
           <div className='settings-container'>
+            <LanguagePicker>
+              {() => {
+                return <div className='language-picker-container'>bla</div>
+              }}
+            </LanguagePicker>
             <img src={darkMode} alt='dark mode' className='icon' />
             <img src={search} alt='search' className='icon' />
           </div>
