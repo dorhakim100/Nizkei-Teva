@@ -45,9 +45,14 @@
 
     .settings-container {
       display: flex;
+      align-items: center;
 
       gap: 3em;
       color: $primary-color;
+
+      .language-picker-container {
+        font-size: 1.2rem;
+      }
 
       .icon {
         cursor: pointer;

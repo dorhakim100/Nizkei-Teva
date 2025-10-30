@@ -16,6 +16,7 @@ import { Language } from '../../types/system/Languages'
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
 import { getLanguageName, smoothScroll } from '../../services/util.service'
 
+import headerJson from '../../assets/jsons/header.json'
 interface AppHeaderProps {
   routes: Route[]
 }
@@ -85,7 +86,9 @@ export function AppHeader({ routes }: AppHeaderProps) {
 
         <div className='profile-container pointer'>
           <img src={profile} alt='profile' className='icon profile-icon' />
-          <span className='bold'>כניסה לאזור האישי</span>
+          <span className='bold'>
+            {headerJson.profile[prefs.language as keyof Language]}
+          </span>
         </div>
       </header>
     </>
