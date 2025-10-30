@@ -8,7 +8,6 @@ import { smoothScroll } from './services/util.service'
 
 import { AppHeader } from './components/AppHeader/AppHeader'
 import { AppFooter } from './components/AppFooter/AppFooter.tsx'
-import { Prefs } from './components/Prefs/Prefs'
 import { RootState } from './store/store.ts'
 
 import './App.css'
@@ -36,8 +35,6 @@ function App() {
   return (
     <>
       <AppHeader routes={routes} />
-      <Prefs />
-      {/* <PrefsButton /> */}
       <main className={`main ${prefs.isDarkMode ? 'dark-mode' : ''}`}>
         <SearchBar />
         <Routes>
