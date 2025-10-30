@@ -7,6 +7,15 @@
   right: 0;
 
   height: $header-height-desktop;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+
+  .logo-img {
+    height: $header-height-desktop;
+    // width: 2rem;
+  }
+
   nav {
     ul {
       margin: 0px;

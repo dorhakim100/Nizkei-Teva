@@ -10,7 +10,11 @@ import { setIsHeader } from '../../store/actions/system.actions'
 import { useSelector } from 'react-redux'
 import { DropdownOption } from '../../types/DropdownOption'
 
-export function DropdownMenu({ options }: any) {
+interface DropdownMenuProps {
+  options: DropdownOption[]
+}
+
+export function DropdownMenu({ options }: DropdownMenuProps) {
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
@@ -18,9 +22,9 @@ export function DropdownMenu({ options }: any) {
     (stateSelector: RootState) => stateSelector.systemModule.isHeader
   )
 
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
-  const handleClick = (event: any) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
     setIsHeader(!isHeader)
   }

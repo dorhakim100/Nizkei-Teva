@@ -1,6 +1,6 @@
 import { Prefs } from '../../types/system/Prefs'
 
-const KEY = 'CamJam-prefs'
+const KEY = 'prefs'
 
 export const systemService = {
   getPrefs,
@@ -9,20 +9,20 @@ export const systemService = {
 
 export function getPrefs() {
   const entityType = KEY
-  let prefs
+  let prefs: Prefs = { isEnglish: false, isDarkMode: false }
+
   if (!localStorage.getItem(entityType)) {
-    prefs = { isDarkMode: false }
     localStorage.setItem(entityType, JSON.stringify(prefs))
   } else {
     const strStorage = localStorage.getItem(entityType)
-    if (!strStorage) return { isDarkMode: false }
+    if (!strStorage) return prefs
     prefs = JSON.parse(strStorage)
   }
 
   return prefs
 }
 
-export function setPrefs(prefs: { isDarkMode: boolean; user?: string | null }) {
-  const entityType = 'CamJam-prefs'
+export function setPrefs(prefs: Prefs) {
+  const entityType = 'prefs'
   localStorage.setItem(entityType, JSON.stringify(prefs))
 }

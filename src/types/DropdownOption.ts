@@ -1,4 +1,4 @@
 export interface DropdownOption {
   title: string
-  onClick: () => void
+  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }

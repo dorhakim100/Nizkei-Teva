@@ -22,6 +22,12 @@ body {
   color: $dark-gray;
   transition: color 0.3s, background-color 0.3s;
 
+  direction: rtl;
+
+  &.english {
+    direction: ltr;
+  }
+
   &.dark-mode {
     background-color: $dark-gray;
     color: $neutral-gray;
@@ -39,6 +45,7 @@ body {
   background-color: $neutral-gray;
   color: $dark-gray;
   transition: color 0.3s, background-color 0.3s;
+
   &.dark-mode {
     background-color: $dark-gray;
     color: $neutral-gray;

@@ -6,7 +6,9 @@ import { Route } from '../../assets/routes/routes'
 
 import { RootState } from '../../store/store'
 
-import { DropdownMenu } from '../DropdownMenu/DropdownMenu'
+// import { DropdownMenu } from '../DropdownMenu/DropdownMenu'
+
+import logoImg from '../../../public/logo.png'
 
 interface AppHeaderProps {
   routes: Route[]
@@ -34,7 +36,8 @@ export function AppHeader({ routes }: AppHeaderProps) {
           prefs.isDarkMode ? 'dark-mode' : ''
         }`}
       >
-        <DropdownMenu options={routes} />
+        <img src={logoImg} alt='logo' className='logo-img' />
+        {/* <DropdownMenu options={routes} /> */}
         <nav>
           <ul>
             {routes.map((route, index) => (

@@ -11,6 +11,7 @@ import { AppFooter } from './components/AppFooter/AppFooter.tsx'
 import { RootState } from './store/store.ts'
 
 import './App.css'
+import { Prefs } from './types/system/Prefs.ts'
 
 function App() {
   const prefs = useSelector(
@@ -20,21 +21,34 @@ function App() {
   const location = useLocation()
 
   useEffect(() => {
-    if (prefs.isDarkMode) {
-      document.body.classList.add('dark-mode')
-    } else {
-      document.body.classList.remove('dark-mode')
-    }
+    _setBodyClass(prefs)
   }, [prefs])
 
   useEffect(() => {
     smoothScroll()
   }, [location.pathname])
 
+  function _setBodyClass(prefs: Prefs) {
+    if (prefs.isDarkMode) {
+      document.body.classList.add('dark-mode')
+    } else {
+      document.body.classList.remove('dark-mode')
+    }
+    if (prefs.isEnglish) {
+      document.body.classList.add('english')
+    } else {
+      document.body.classList.remove('english')
+    }
+  }
+
   return (
     <>
       <AppHeader routes={routes} />
-      <main className={`main ${prefs.isDarkMode ? 'dark-mode' : ''}`}>
+      <main
+        className={`main ${prefs.isDarkMode ? 'dark-mode' : ''} ${
+          prefs.isEnglish ? 'english' : ''
+        }`}
+      >
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={<route.element />} />
