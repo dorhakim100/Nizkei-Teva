@@ -9,7 +9,7 @@ export const systemService = {
 
 export function getPrefs() {
   const entityType = KEY
-  let prefs: Prefs = { isEnglish: false, isDarkMode: false }
+  let prefs: Prefs = { language: 'he', isDarkMode: false }
 
   if (!localStorage.getItem(entityType)) {
     localStorage.setItem(entityType, JSON.stringify(prefs))

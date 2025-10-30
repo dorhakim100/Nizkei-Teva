@@ -34,11 +34,11 @@ function App() {
     } else {
       document.body.classList.remove('dark-mode')
     }
-    if (prefs.isEnglish) {
-      document.body.classList.add('english')
-    } else {
-      document.body.classList.remove('english')
-    }
+
+    document.body.classList.remove('eng')
+    document.body.classList.remove('he')
+
+    document.body.classList.add(prefs.language)
   }
 
   return (

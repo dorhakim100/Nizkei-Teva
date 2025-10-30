@@ -37,7 +37,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
         }`}
       >
         <img src={logoImg} alt='logo' className='logo-img' />
-        {/* <DropdownMenu options={routes} /> */}
+
         <nav>
           <ul>
             {routes.map((route, index) => (

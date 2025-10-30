@@ -1,4 +1,4 @@
 export interface Prefs {
-    isEnglish: boolean;
-    isDarkMode: boolean;
-  }
+  language: 'he' | 'en'
+  isDarkMode: boolean
+}

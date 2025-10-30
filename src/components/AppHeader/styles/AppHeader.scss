@@ -9,22 +9,27 @@
   height: $header-height-desktop;
 
   display: grid;
+  align-items: center;
   grid-template-columns: auto 1fr auto;
 
   .logo-img {
-    height: $header-height-desktop;
+    max-height: $header-height-desktop;
+
     // width: 2rem;
   }
 
   nav {
     ul {
       margin: 0px;
-      //   display: flex;
-      //   justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
 
       li {
         // padding: 1em;
         cursor: pointer;
+        a {
+          color: $primary-color;
+        }
       }
     }
   }

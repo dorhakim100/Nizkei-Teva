@@ -19,4 +19,22 @@ export const routes: Route[] = [
     element: Home,
     icon: HomeIcon,
   },
+  {
+    title: 'Home',
+    path: '/',
+    element: Home,
+    icon: HomeIcon,
+  },
+  {
+    title: 'Home',
+    path: '/',
+    element: Home,
+    icon: HomeIcon,
+  },
+  {
+    title: 'Home',
+    path: '/',
+    element: Home,
+    icon: HomeIcon,
+  },
 ]
