@@ -18,19 +18,64 @@
     // width: 2rem;
   }
 
-  nav {
-    ul {
-      margin: 0px;
-      display: flex;
-      justify-content: space-between;
+  .navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
 
-      li {
-        // padding: 1em;
-        cursor: pointer;
-        a {
-          color: $primary-color;
+    nav {
+      ul {
+        margin: 0px;
+        display: flex;
+        gap: 1.5em;
+
+        li {
+          // padding: 1em;
+          cursor: pointer;
+          a {
+            color: $primary-color;
+          }
         }
       }
+    }
+
+    .settings-container {
+      display: flex;
+
+      gap: 3em;
+
+      .icon {
+        cursor: pointer;
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+    }
+  }
+
+  .profile-container {
+    background-color: $secondary-color;
+    height: 100%;
+    // width: 284px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 0.5rem 1rem;
+    padding: 0 2.5rem;
+
+    gap: 10px;
+
+    color: $white;
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    .profile-icon {
+      height: 2rem;
+      width: 2rem;
     }
   }
 }
