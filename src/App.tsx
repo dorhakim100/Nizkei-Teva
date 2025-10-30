@@ -35,7 +35,7 @@ function App() {
       document.body.classList.remove('dark-mode')
     }
 
-    document.body.classList.remove('eng')
+    document.body.classList.remove('en')
     document.body.classList.remove('he')
 
     document.body.classList.add(prefs.language)

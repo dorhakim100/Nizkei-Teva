@@ -13,9 +13,8 @@ import darkMode from '../../../public/icons/dark-mode.svg'
 import search from '../../../public/icons/search.svg'
 import profile from '../../../public/icons/profile.svg'
 import { Language } from '../../types/system/Languages'
-// import { useNavigateToPage } from '../../hooks/UseNavigateToPage'
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
-import { getLanguageName } from '../../services/util.service'
+import { getLanguageName, smoothScroll } from '../../services/util.service'
 
 interface AppHeaderProps {
   routes: Route[]
@@ -32,8 +31,9 @@ export function AppHeader({ routes }: AppHeaderProps) {
     (stateSelector: RootState) => stateSelector.systemModule.isHeader
   )
 
-  const navigateToPage = (route: string) => {
-    navigate(route)
+  const navigateWithScroll = (path: string) => {
+    smoothScroll()
+    navigate(path)
   }
 
   return (
@@ -47,7 +47,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
           src={logoImg}
           alt='logo'
           className='logo-img pointer'
-          onClick={() => navigate('/')}
+          onClick={() => navigateWithScroll('/')}
         />
 
         <div className='navigation-container'>
@@ -58,7 +58,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
                 .map((route, index) => (
                   <li
                     key={index}
-                    onClick={() => navigateToPage(route.path)}
+                    onClick={() => navigateWithScroll(route.path)}
                     className='underline-animation'
                   >
                     <Link className='bold' to={route.path}>
@@ -78,8 +78,8 @@ export function AppHeader({ routes }: AppHeaderProps) {
                 )
               }}
             </LanguagePicker>
-            <img src={darkMode} alt='dark mode' className='icon' />
             <img src={search} alt='search' className='icon' />
+            <img src={darkMode} alt='dark mode' className='icon' />
           </div>
         </div>
 
