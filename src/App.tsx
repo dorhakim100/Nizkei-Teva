@@ -36,7 +36,7 @@ function App() {
     <>
       <AppHeader routes={routes} />
       <main className={`main ${prefs.isDarkMode ? 'dark-mode' : ''}`}>
-        <SearchBar />
+        {/* <SearchBar /> */}
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={<route.element />} />
