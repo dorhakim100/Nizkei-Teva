@@ -11,7 +11,6 @@ import { AppFooter } from './components/AppFooter/AppFooter.tsx'
 import { RootState } from './store/store.ts'
 
 import './App.css'
-import { SearchBar } from './components/SearchBar/SearchBar.tsx'
 
 function App() {
   const prefs = useSelector(
@@ -36,7 +35,6 @@ function App() {
     <>
       <AppHeader routes={routes} />
       <main className={`main ${prefs.isDarkMode ? 'dark-mode' : ''}`}>
-        {/* <SearchBar /> */}
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={<route.element />} />

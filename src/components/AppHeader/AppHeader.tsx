@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -35,6 +34,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
           prefs.isDarkMode ? 'dark-mode' : ''
         }`}
       >
+        <DropdownMenu options={routes} />
         <nav>
           <ul>
             {routes.map((route, index) => (
