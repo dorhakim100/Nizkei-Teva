@@ -16,12 +16,12 @@ import HomeIcon from '@mui/icons-material/Home'
 import headerJson from '../jsons/header.json'
 
 export const routes: Route[] = [
-  // {
-  //   title: 'Home',
-  //   path: '/',
-  //   element: Home,
-  //   icon: HomeIcon,
-  // },
+  {
+    title: headerJson.home,
+    path: '/',
+    element: Home,
+    icon: HomeIcon,
+  },
   {
     title: headerJson.insurance,
     path: '/insurance',

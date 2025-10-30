@@ -13,6 +13,7 @@ import darkMode from '../../../public/icons/dark-mode.svg'
 import search from '../../../public/icons/search.svg'
 import profile from '../../../public/icons/profile.svg'
 import { Language } from '../../types/system/Languages'
+import { useNavigateToPage } from '../../hooks/UseNavigateToPage'
 
 interface AppHeaderProps {
   routes: Route[]
@@ -40,18 +41,25 @@ export function AppHeader({ routes }: AppHeaderProps) {
           prefs.isDarkMode ? 'dark-mode' : ''
         }`}
       >
-        <img src={logoImg} alt='logo' className='logo-img' />
+        <img
+          src={logoImg}
+          alt='logo'
+          className='logo-img'
+          onClick={useNavigateToPage('/')}
+        />
 
         <div className='navigation-container'>
           <nav>
             <ul>
-              {routes.map((route, index) => (
-                <li key={index} onClick={() => navigateToPage(route.path)}>
-                  <Link className='bold' to={route.path}>
-                    {route.title[prefs.language as keyof Language]}
-                  </Link>
-                </li>
-              ))}
+              {routes
+                .filter((route) => route.path !== '/')
+                .map((route, index) => (
+                  <li key={index} onClick={() => navigateToPage(route.path)}>
+                    <Link className='bold' to={route.path}>
+                      {route.title[prefs.language as keyof Language]}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </nav>
           <div className='settings-container'>
