@@ -38,59 +38,57 @@ export function AppHeader({ routes }: AppHeaderProps) {
   }
 
   return (
-    <>
-      <header
-        className={`header ${isHeader ? 'visable' : ''} ${
-          prefs.isDarkMode ? 'dark-mode' : ''
-        }`}
-      >
-        <img
-          src={logoImg}
-          alt='logo'
-          className='logo-img pointer'
-          onClick={() => navigateWithScroll('/')}
-        />
+    <header
+      className={`header ${isHeader ? 'visable' : ''} ${
+        prefs.isDarkMode ? 'dark-mode' : ''
+      }`}
+    >
+      <img
+        src={logoImg}
+        alt='logo'
+        className='logo-img pointer'
+        onClick={() => navigateWithScroll('/')}
+      />
 
-        <div className='navigation-container'>
-          <nav>
-            <ul>
-              {routes
-                .filter((route) => route.path !== '/')
-                .map((route, index) => (
-                  <li
-                    key={index}
-                    onClick={() => navigateWithScroll(route.path)}
-                    className='underline-animation'
-                  >
-                    <Link className='bold' to={route.path}>
-                      {route.title[prefs.language as keyof Language]}
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </nav>
-          <div className='settings-container'>
-            <LanguagePicker>
-              {() => {
-                return (
-                  <div className='language-picker-container bold'>
-                    {getLanguageName(prefs.language)}
-                  </div>
-                )
-              }}
-            </LanguagePicker>
-            <img src={search} alt='search' className='icon' />
-            <img src={darkMode} alt='dark mode' className='icon' />
-          </div>
+      <div className='navigation-container'>
+        <nav>
+          <ul>
+            {routes
+              .filter((route) => route.path !== '/')
+              .map((route, index) => (
+                <li
+                  key={index}
+                  onClick={() => navigateWithScroll(route.path)}
+                  className='underline-animation'
+                >
+                  <Link className='bold' to={route.path}>
+                    {route.title[prefs.language as keyof Language]}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </nav>
+        <div className='settings-container'>
+          <LanguagePicker>
+            {() => {
+              return (
+                <div className='language-picker-container bold'>
+                  {getLanguageName(prefs.language)}
+                </div>
+              )
+            }}
+          </LanguagePicker>
+          <img src={search} alt='search' className='icon' />
+          <img src={darkMode} alt='dark mode' className='icon' />
         </div>
+      </div>
 
-        <div className='profile-container pointer'>
-          <img src={profile} alt='profile' className='icon profile-icon' />
-          <span className='bold'>
-            {headerJson.profile[prefs.language as keyof Language]}
-          </span>
-        </div>
-      </header>
-    </>
+      <div className='profile-container pointer'>
+        <img src={profile} alt='profile' className='icon profile-icon' />
+        <span className='bold'>
+          {headerJson.profile[prefs.language as keyof Language]}
+        </span>
+      </div>
+    </header>
   )
 }

@@ -13,10 +13,13 @@
   grid-template-columns: auto 1fr auto;
 
   .logo-img {
-    max-height: $header-height-desktop;
     margin-inline: 1.5rem;
 
-    // width: 2rem;
+    height: 100%;
+    max-height: $header-height-desktop;
+    width: auto;
+    display: block;
+    object-fit: contain;
   }
 
   .navigation-container {
