@@ -44,7 +44,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
         <img
           src={logoImg}
           alt='logo'
-          className='logo-img'
+          className='logo-img pointer'
           onClick={useNavigateToPage('/')}
         />
 
@@ -68,7 +68,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
           </div>
         </div>
 
-        <div className='profile-container'>
+        <div className='profile-container pointer'>
           <img src={profile} alt='profile' className='icon profile-icon' />
           <span className='bold'>כניסה לאזור האישי</span>
         </div>
