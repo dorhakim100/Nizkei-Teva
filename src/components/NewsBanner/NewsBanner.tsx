@@ -1,19 +1,71 @@
+import React, { useMemo, useState } from 'react'
+
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import { Language } from '../../types/system/Languages'
 
+import Marquee from 'react-fast-marquee'
+
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
+import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline'
+
 import newsBannerJson from '../../assets/jsons/news-banner.json'
+
+import Divider from '@mui/material/Divider'
 
 export function NewsBanner() {
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
 
+  const [isPlaying, setIsPlaying] = useState(true)
+
+  const direction = useMemo(() => {
+    switch (prefs.language) {
+      case 'he':
+        return 'right'
+      case 'en':
+        return 'left'
+      default:
+        return 'right'
+    }
+  }, [prefs.language])
+
+  const setPlaying = () => {
+    setIsPlaying(true)
+  }
+
+  const setPaused = () => {
+    setIsPlaying(false)
+  }
+
+  const renderButton = () => {
+    if (isPlaying) {
+      return <PauseCircleOutlineIcon onClick={setPaused} className='pointer' />
+    }
+    return <PlayCircleOutlineIcon onClick={setPlaying} className='pointer' />
+  }
+
   return (
     <div className={`news-banner ${prefs.language}`}>
-      <span className='text'>
-        {newsBannerJson.message[prefs.language as keyof Language]}
-      </span>
+      {renderButton()}
+      <h2 className='title'>
+        {newsBannerJson.title[prefs.language as keyof Language]}
+      </h2>
+      <Divider orientation='vertical' flexItem className='divider' />
+      <div
+        className='message-container'
+        onMouseEnter={setPaused}
+        onMouseLeave={setPlaying}
+      >
+        <Marquee
+          direction={direction}
+          className={`message ${direction}`}
+          play={isPlaying}
+        >
+          {newsBannerJson.message[prefs.language as keyof Language]}
+        </Marquee>
+      </div>
     </div>
   )
 }
