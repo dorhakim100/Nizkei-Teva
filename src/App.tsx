@@ -12,6 +12,7 @@ import { RootState } from './store/store.ts'
 
 import './App.css'
 import { Prefs } from './types/system/Prefs.ts'
+import { NewsBanner } from './components/NewsBanner/NewsBanner'
 
 function App() {
   const prefs = useSelector(
@@ -44,11 +45,13 @@ function App() {
   return (
     <>
       <AppHeader routes={routes} />
+
       <main
         className={`main ${prefs.isDarkMode ? 'dark-mode' : ''} ${
           prefs.isEnglish ? 'english' : ''
         }`}
       >
+        <NewsBanner />
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={<route.element />} />
