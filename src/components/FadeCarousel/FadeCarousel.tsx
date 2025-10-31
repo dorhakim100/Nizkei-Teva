@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
 
@@ -8,13 +9,15 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { PlayButton } from '../PlayButton/PlayButton'
 
-interface Slide {
-  image: string
-  title: string
-  description: string
-}
+import { RootState } from '../../store/store'
+import { Slide } from '../../types/Carousel/Slide'
+import { Language } from '../../types/system/Languages'
 
 export function FadeCarousel({ slides }: { slides: Slide[] }) {
+  const prefs = useSelector(
+    (stateSelector: RootState) => stateSelector.systemModule.prefs
+  )
+
   const swiperRef = useRef<SwiperRef>(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
@@ -34,7 +37,7 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
         onSwiper={(swiper) => (swiperRef.current = { swiper })}
         spaceBetween={30}
         effect={'fade'}
-        pagination={false}
+        // pagination={true}
         loop={true}
         autoplay={{
           delay: 5000,
@@ -49,6 +52,7 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <img src={slide.image} />
+            <h2>{slide.title[prefs.language as keyof Language]}</h2>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -2,23 +2,58 @@
   "slides": [
     {
       "image": "public/imgs/image 104.png",
-      "title": "title",
-      "description": "description"
+      "title": {
+        "he": "כותרת",
+        "en": "title"
+      },
+      "button": {
+        "isButton": true,
+        "text": {
+          "he": "כפתור",
+          "en": "button"
+        },
+        "link": "https://www.google.com",
+        "color": "secondary"
+      }
     },
     {
       "image": "https://www.kanat.co.il/wp-content/uploads/2024/04/Banner-Student-Scholarship-1980x664-1.jpg",
       "title": "title",
-      "description": "description"
+      "button": {
+        "isButton": true,
+        "text": {
+          "he": "כפתור",
+          "en": "button"
+        },
+        "link": "https://www.google.com",
+        "color": "secondary"
+      }
     },
     {
       "image": "https://www.kanat.co.il/wp-content/uploads/2023/08/HEAT-567X1920-PX.jpg",
       "title": "title",
-      "description": "description"
+      "button": {
+        "isButton": true,
+        "text": {
+          "he": "כפתור",
+          "en": "button"
+        },
+        "link": "https://www.google.com",
+        "color": "secondary"
+      }
     },
     {
       "image": "https://www.kanat.co.il/wp-content/uploads/2024/06/Robotic-Agriculture-1980x664-1.jpg",
       "title": "title",
-      "description": "description"
+      "button": {
+        "isButton": true,
+        "text": {
+          "he": "כפתור",
+          "en": "button"
+        },
+        "link": "https://www.google.com",
+        "color": "secondary"
+      }
     }
   ]
 }
