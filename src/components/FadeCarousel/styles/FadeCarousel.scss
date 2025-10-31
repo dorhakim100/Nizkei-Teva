@@ -6,30 +6,30 @@
     height: 100%;
     position: relative;
 
-    &::before {
-      content: '';
-      pointer-events: none;
-      position: absolute;
-      z-index: -1;
-      z-index: 2;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-
-      background: linear-gradient(
-        -274.2deg,
-        #000 0.14%,
-        rgba(0, 0, 0, 0.11) 115.32%,
-        rgba(0, 0, 0, 0) 138.32%
-      );
-      opacity: 0.4;
-    }
-
     .swiper-slide {
       position: relative;
       background-position: center;
       background-size: cover;
+
+      &::before {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+
+        z-index: 2;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        background: linear-gradient(
+          -274.2deg,
+          #000 0.14%,
+          rgba(0, 0, 0, 0.11) 115.32%,
+          rgba(0, 0, 0, 0) 138.32%
+        );
+        opacity: 0.4;
+      }
 
       img {
         display: block;
@@ -40,15 +40,52 @@
 
       .text-container {
         position: absolute;
-        z-index: 3;
+        z-index: 4;
+        top: 0;
         left: 0;
         bottom: 0;
         right: 0;
-        padding: 20px;
-        background-color: rgba(0, 0, 0, 0.5);
+        margin: 0 40px;
+        padding: 0 20px;
+
+        display: grid;
+        align-items: center;
+
+        text-align: start;
+        z-index: 100;
         color: $white;
-        font-size: 24px;
-        font-weight: 600;
+
+        .hs-container {
+          min-height: 266px;
+          .agriculture-sticker {
+            width: 116px;
+            // height: 100px;
+            object-fit: contain;
+          }
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 0 20px;
+
+          h2 {
+            font-size: 2.8rem;
+
+            line-height: 1.2;
+            margin-bottom: 0rem;
+          }
+          h3 {
+            font-size: 2rem;
+
+            line-height: 1.2;
+            margin-bottom: 0rem;
+          }
+          h4 {
+            font-size: 1.125rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 0rem;
+          }
+        }
       }
     }
   }

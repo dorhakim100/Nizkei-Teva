@@ -13,6 +13,8 @@ import { RootState } from '../../store/store'
 import { Slide } from '../../types/Carousel/Slide'
 import { Language } from '../../types/system/Languages'
 
+import agricultureSticker from '../../../public/imgs/agriculture-sticker.png'
+
 export function FadeCarousel({ slides }: { slides: Slide[] }) {
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
@@ -53,13 +55,18 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
           <SwiperSlide key={index}>
             <img src={slide.image} />
             <div className='text-container'>
-              <h2>{slide.h2[prefs.language as keyof Language]}</h2>
-              {slide.h3 && (
-                <h3>{slide.h3[prefs.language as keyof Language]}</h3>
-              )}
-              {slide.h4 && (
-                <h4>{slide.h4[prefs.language as keyof Language]}</h4>
-              )}
+              <div className='hs-container'>
+                <img src={agricultureSticker} className='agriculture-sticker' />
+                <h2>{slide.h2[prefs.language as keyof Language]}</h2>
+                {slide.h3 && (
+                  <h3>{slide.h3[prefs.language as keyof Language]}</h3>
+                )}
+                {slide.h4 && (
+                  <h4 className='bold'>
+                    {slide.h4[prefs.language as keyof Language]}
+                  </h4>
+                )}
+              </div>
             </div>
           </SwiperSlide>
         ))}
