@@ -1,0 +1,18 @@
+.fade-carousel-container {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 48 / 19;
+      object-fit: cover;
+    }
+  }
+}

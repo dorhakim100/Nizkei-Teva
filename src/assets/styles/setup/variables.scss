@@ -1,7 +1,7 @@
 :root {
   --header-height-desktop: 98px;
-  --header-height-mobile: 74px;
-  --mobile-width: 1200px;
+  --header-height-narrow: 74px;
+  --narrow-width: 1200px;
 }
 
 $primary-color: #452a7a;
@@ -25,7 +25,9 @@ $very-dark-gray: #1d1d1d;
 $neutral-gray: #f5f5f5;
 
 $header-height-desktop: var(--header-height-desktop);
-$header-height-mobile: var(--header-height-mobile);
+$header-height-narrow: var(--header-height-narrow);
 
-$mobile-width: var(--mobile-width);
-$mobile-breakpoint: 1200px;
+$narrow-width: var(--narrow-width);
+$narrow-breakpoint: 1200px;
+
+$mobile-width: 768px;

@@ -13,8 +13,8 @@
   align-items: center;
   grid-template-columns: auto 1fr auto;
 
-  @media (max-width: $mobile-breakpoint) {
-    height: $header-height-mobile;
+  @media (max-width: $narrow-breakpoint) {
+    height: $header-height-narrow;
     display: flex;
     justify-content: space-between;
   }
@@ -72,7 +72,7 @@
       }
     }
 
-    @media (max-width: $mobile-breakpoint) {
+    @media (max-width: $narrow-breakpoint) {
       width: fit-content;
       display: grid;
       grid-template-columns: repeat(2, auto);
@@ -147,8 +147,8 @@
     justify-content: center;
     gap: 10px;
 
-    @media (max-width: $mobile-breakpoint) {
-      height: $header-height-mobile;
+    @media (max-width: $narrow-breakpoint) {
+      height: $header-height-narrow;
       gap: 1.5rem;
     }
 

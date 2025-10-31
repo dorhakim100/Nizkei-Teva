@@ -29,7 +29,7 @@
     );
   }
 
-  @media (max-width: $mobile-breakpoint) {
+  @media (max-width: $narrow-breakpoint) {
     background: $primary-color;
     padding-inline-start: 0.5rem;
   }

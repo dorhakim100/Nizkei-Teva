@@ -41,7 +41,7 @@ body {
   min-height: 100vh;
 
   margin-top: $header-height-desktop;
-  padding: 0 1em;
+  // padding: 0 1em;
 
   background-color: $neutral-gray;
   color: $dark-gray;
@@ -52,8 +52,8 @@ body {
     color: $neutral-gray;
   }
 
-  @media (max-width: $mobile-breakpoint) {
-    margin-top: $header-height-mobile;
+  @media (max-width: $narrow-breakpoint) {
+    margin-top: $header-height-narrow;
   }
 }
 
