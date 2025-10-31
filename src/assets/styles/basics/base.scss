@@ -51,6 +51,10 @@ body {
     background-color: $dark-gray;
     color: $neutral-gray;
   }
+
+  @media (max-width: $mobile-breakpoint) {
+    margin-top: $header-height-mobile;
+  }
 }
 
 h1,

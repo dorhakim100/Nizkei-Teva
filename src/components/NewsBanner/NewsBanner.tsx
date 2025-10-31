@@ -1,12 +1,18 @@
-interface NewsBannerProps {
-  message?: string
-}
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/store'
+import { Language } from '../../types/system/Languages'
 
-export function NewsBanner({ message }: NewsBannerProps) {
+import newsBannerJson from '../../assets/jsons/news-banner.json'
+
+export function NewsBanner() {
+  const prefs = useSelector(
+    (stateSelector: RootState) => stateSelector.systemModule.prefs
+  )
+
   return (
-    <div className='news-banner'>
-      <span className='news-banner__text'>
-        {message || 'Welcome! Here is a basic news banner.'}
+    <div className={`news-banner ${prefs.language}`}>
+      <span className='text'>
+        {newsBannerJson.message[prefs.language as keyof Language]}
       </span>
     </div>
   )
