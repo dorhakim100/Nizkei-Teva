@@ -8,30 +8,13 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { PlayButton } from '../PlayButton/PlayButton'
 
-const slides = [
-  {
-    image: 'https://swiperjs.com/demos/images/nature-1.jpg',
-    title: 'Slide 1',
-    description: 'This is the first slide',
-  },
-  {
-    image: 'https://swiperjs.com/demos/images/nature-2.jpg',
-    title: 'Slide 2',
-    description: 'This is the second slide',
-  },
-  {
-    image: 'https://swiperjs.com/demos/images/nature-3.jpg',
-    title: 'Slide 3',
-    description: 'This is the third slide',
-  },
-  {
-    image: 'https://swiperjs.com/demos/images/nature-4.jpg',
-    title: 'Slide 4',
-    description: 'This is the fourth slide',
-  },
-]
+interface Slide {
+  image: string
+  title: string
+  description: string
+}
 
-export function FadeCarousel() {
+export function FadeCarousel({ slides }: { slides: Slide[] }) {
   const swiperRef = useRef<SwiperRef>(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
