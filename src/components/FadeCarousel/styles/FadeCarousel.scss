@@ -31,14 +31,20 @@
         opacity: 0.4;
       }
 
-      img {
+      img:not(.agriculture-sticker) {
         display: block;
         width: 100%;
-        aspect-ratio: 48 / 19.5;
+        aspect-ratio: 1920 / 620;
         object-fit: cover;
+        min-height: 590px;
+
+        @media (max-width: $mobile-width) {
+          height: calc(120vw);
+        }
       }
 
       .text-container {
+        // width: fit-content;
         position: absolute;
         z-index: 4;
         top: 0;
@@ -46,6 +52,8 @@
         bottom: 0;
         right: 0;
         margin: 0 40px;
+        margin: 0 160px;
+
         padding: 0 20px;
 
         display: grid;
@@ -55,17 +63,24 @@
         z-index: 100;
         color: $white;
 
+        @media (max-width: 1370px) {
+          margin: 0;
+        }
+
         .hs-container {
           min-height: 266px;
           .agriculture-sticker {
-            width: 116px;
-            // height: 100px;
+            // width: 116px;
+            width: fit-content;
+            object-fit: cover;
+            height: 56px;
+            justify-self: start;
             object-fit: contain;
           }
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
-          padding: 0 20px;
+          // padding: 0 20px;
 
           h2 {
             font-size: 2.8rem;

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
@@ -33,9 +33,17 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
     setIsPlaying((prevState) => !prevState)
   }
 
+  // Recalculate Swiper after language (and potential dir) changes
+  useEffect(() => {
+    const swiper = swiperRef.current?.swiper
+    if (!swiper) return
+    swiper.update()
+  }, [prefs.language])
+
   return (
     <div className='fade-carousel-container'>
       <Swiper
+        key={prefs.language}
         onSwiper={(swiper) => (swiperRef.current = { swiper })}
         spaceBetween={30}
         effect={'fade'}
@@ -71,6 +79,7 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <div className='pagination-container'>
         <PlayButton isPlaying={isPlaying} onClick={togglePlaying} />
         {slides.map((_, index) => {
@@ -78,7 +87,7 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
             <div
               key={`${index}-pagination-bullet`}
               onClick={() => {
-                swiperRef.current?.swiper.slideTo(index)
+                swiperRef.current?.swiper.slideToLoop(index)
                 setActiveIndex(index)
                 if (isPlaying) {
                   swiperRef.current?.swiper.autoplay.start()
