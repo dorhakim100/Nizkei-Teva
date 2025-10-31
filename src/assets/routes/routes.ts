@@ -13,7 +13,7 @@ export interface Route {
 
 import HomeIcon from '@mui/icons-material/Home'
 
-import routesJson from '../jsons/routes.json'
+import routesJson from '../jsons/header/routes.json'
 
 export const routes: Route[] = [
   {

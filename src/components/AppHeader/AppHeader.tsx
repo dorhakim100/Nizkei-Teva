@@ -21,7 +21,7 @@ import { useDimensions } from '../../hooks/useDimensions'
 import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
 
-import headerJson from '../../assets/jsons/header.json'
+import headerJson from '../../assets/jsons/header/header.json'
 import { DropdownMenu } from '../DropdownMenu/DropdownMenu'
 import { DropdownOption } from '../../types/DropdownOption'
 interface AppHeaderProps {

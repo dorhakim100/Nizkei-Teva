@@ -8,7 +8,7 @@ import Marquee from 'react-fast-marquee'
 
 import { PlayButton } from '../PlayButton/PlayButton'
 
-import newsBannerJson from '../../assets/jsons/news-banner.json'
+import newsBannerJson from '../../assets/jsons/header/news-banner.json'
 
 import Divider from '@mui/material/Divider'
 
