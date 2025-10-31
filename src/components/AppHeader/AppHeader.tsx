@@ -26,6 +26,11 @@ interface AppHeaderProps {
   routes: Route[]
 }
 
+const root = document.documentElement
+const MOBILE_WIDTH = +getComputedStyle(root)
+  .getPropertyValue('--mobile-width')
+  .replace('px', '')
+
 export function AppHeader({ routes }: AppHeaderProps) {
   const navigate = useNavigate()
 
@@ -55,13 +60,11 @@ export function AppHeader({ routes }: AppHeaderProps) {
   }
 
   useEffect(() => {
-    document.body.addEventListener('cl', () => {})
+    console.log(MOBILE_WIDTH)
 
-    return () => {}
-  }, [isSearchOpen])
-
-  useEffect(() => {
-    console.log(dimensions)
+    if (dimensions.width < MOBILE_WIDTH) {
+      console.log(dimensions)
+    }
   }, [dimensions])
 
   return (
