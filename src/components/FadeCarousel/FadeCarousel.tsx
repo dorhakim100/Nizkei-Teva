@@ -52,7 +52,15 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <img src={slide.image} />
-            <h2>{slide.title[prefs.language as keyof Language]}</h2>
+            <div className='text-container'>
+              <h2>{slide.h2[prefs.language as keyof Language]}</h2>
+              {slide.h3 && (
+                <h3>{slide.h3[prefs.language as keyof Language]}</h3>
+              )}
+              {slide.h4 && (
+                <h4>{slide.h4[prefs.language as keyof Language]}</h4>
+              )}
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,10 +1,18 @@
 {
   "slides": [
     {
-      "image": "public/imgs/image 104.png",
-      "title": {
-        "he": "כותרת",
-        "en": "title"
+      "image": "../../../../public/imgs/image 104.png",
+      "h2": {
+        "he": "קנט - קרן לביטוח נזקי טבע בחקלאות בע״מ",
+        "en": "Kanat - Insurance for natural disasters in agriculture"
+      },
+      "h3": {
+        "he": "כי לטבע חוקים משלו",
+        "en": "Because nature has its own laws"
+      },
+      "h4": {
+        "he": "הגן על העסק שלך עם ביטוח של קנט",
+        "en": "Protect your business with Kanat's insurance"
       },
       "button": {
         "isButton": true,
@@ -18,7 +26,10 @@
     },
     {
       "image": "https://www.kanat.co.il/wp-content/uploads/2024/04/Banner-Student-Scholarship-1980x664-1.jpg",
-      "title": "title",
+      "h2": {
+        "he": "קנט גאה לקחת חלק בעידוד דור העתיד של המחקר החקלאי",
+        "en": "Kanat is proud to be a part of the future of agricultural research"
+      },
       "button": {
         "isButton": true,
         "text": {
@@ -31,7 +42,10 @@
     },
     {
       "image": "https://www.kanat.co.il/wp-content/uploads/2023/08/HEAT-567X1920-PX.jpg",
-      "title": "title",
+      "h2": {
+        "he": "כך תעזרו לצמחים לעבור את השרב בשלום",
+        "en": "So you can help plants pass the summer in peace"
+      },
       "button": {
         "isButton": true,
         "text": {
@@ -44,7 +58,15 @@
     },
     {
       "image": "https://www.kanat.co.il/wp-content/uploads/2024/06/Robotic-Agriculture-1980x664-1.jpg",
-      "title": "title",
+      "h2": {
+        "he": "קנט מפרסמת קול קורא לחדשנות",
+        "en": "Kanat announces a call for innovation"
+      },
+      "h3": {
+        "he": "מרכז החדשנות יאפשר ליזמים וחברות הזנק אפשרות לשתף פעולה עם קנט",
+        "en": "The innovation center will allow startups and companies to share their work with Kanat"
+      },
+
       "button": {
         "isButton": true,
         "text": {

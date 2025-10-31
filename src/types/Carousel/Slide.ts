@@ -3,6 +3,8 @@ import { SlideButton } from './SlideButton'
 
 export interface Slide {
   image: string
-  title: Language
+  h2: Language
+  h3?: Language
+  h4?: Language
   button: SlideButton
 }
