@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
@@ -6,8 +6,7 @@ import { Language } from '../../types/system/Languages'
 
 import Marquee from 'react-fast-marquee'
 
-import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
-import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline'
+import { PlayButton } from '../PlayButton/PlayButton'
 
 import newsBannerJson from '../../assets/jsons/news-banner.json'
 
@@ -39,16 +38,13 @@ export function NewsBanner() {
     setIsPlaying(false)
   }
 
-  const renderButton = () => {
-    if (isPlaying) {
-      return <PauseCircleOutlineIcon onClick={setPaused} className='pointer' />
-    }
-    return <PlayCircleOutlineIcon onClick={setPlaying} className='pointer' />
+  const togglePlaying = () => {
+    setIsPlaying((prevState) => !prevState)
   }
 
   return (
     <div className={`news-banner ${prefs.language}`}>
-      {renderButton()}
+      <PlayButton isPlaying={isPlaying} onClick={togglePlaying} />
       <h2 className='title'>
         {newsBannerJson.title[prefs.language as keyof Language]}
       </h2>
