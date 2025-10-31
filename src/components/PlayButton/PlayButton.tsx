@@ -10,7 +10,14 @@ type PlayButtonProps = {
 
 export function PlayButton({ isPlaying, onClick }: PlayButtonProps) {
   if (isPlaying) {
-    return <PauseCircleOutlineIcon onClick={onClick} className='pointer' />
+    return (
+      <PauseCircleOutlineIcon
+        onClick={onClick}
+        className='pointer play-button'
+      />
+    )
   }
-  return <PlayCircleOutlineIcon onClick={onClick} className='pointer' />
+  return (
+    <PlayCircleOutlineIcon onClick={onClick} className='pointer play-button' />
+  )
 }

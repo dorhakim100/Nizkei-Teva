@@ -26,6 +26,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // gap: 10px;
+    gap: 30px;
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $white;
+      opacity: 1;
+      cursor: pointer;
+      transition: 0.4s ease all;
+
+      &.swiper-pagination-bullet-active,
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+    .play-button {
+      fill: $white;
+    }
   }
 }

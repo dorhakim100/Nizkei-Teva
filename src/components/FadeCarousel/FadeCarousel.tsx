@@ -75,7 +75,13 @@ export function FadeCarousel() {
           return (
             <div
               key={`${index}-pagination-bullet`}
-              onClick={() => swiperRef.current?.swiper.slideTo(index)}
+              onClick={() => {
+                swiperRef.current?.swiper.slideTo(index)
+                setActiveIndex(index)
+                if (isPlaying) {
+                  swiperRef.current?.swiper.autoplay.start()
+                }
+              }}
               className={`swiper-pagination-bullet ${
                 index === activeIndex ? 'swiper-pagination-bullet-active' : ''
               }`}
