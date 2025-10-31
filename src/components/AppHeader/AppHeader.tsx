@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -29,8 +29,8 @@ interface AppHeaderProps {
 }
 
 const root = document.documentElement
-const MOBILE_WIDTH = +getComputedStyle(root)
-  .getPropertyValue('--mobile-width')
+const NARROW_WIDTH = +getComputedStyle(root)
+  .getPropertyValue('--narrow-width')
   .replace('px', '')
 
 export function AppHeader({ routes }: AppHeaderProps) {
@@ -48,8 +48,8 @@ export function AppHeader({ routes }: AppHeaderProps) {
 
   const [isSearchOpen, setIsSearchOpen] = useState(false)
 
-  const isMobile = useMemo(() => {
-    return dimensions.width < MOBILE_WIDTH
+  const isNarrow = useMemo(() => {
+    return dimensions.width < NARROW_WIDTH
   }, [dimensions.width])
 
   const navigateWithScroll = (path: string) => {
@@ -65,14 +65,10 @@ export function AppHeader({ routes }: AppHeaderProps) {
     setIsSearchOpen(false)
   }
 
-  useEffect(() => {
-    console.log(MOBILE_WIDTH)
-  }, [dimensions])
-
   const renderRoutes = () => {
     const routesToRender = routes.filter((route) => route.path !== '/')
 
-    if (isMobile) {
+    if (isNarrow) {
       const options: DropdownOption[] = routesToRender.map((route) => ({
         title: route.title[prefs.language as keyof Language],
         onClick: () => navigateWithScroll(route.path),
@@ -127,7 +123,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
       <div className='navigation-container'>
         {renderRoutes()}
         <div className='settings-container'>
-          {!isMobile && (
+          {!isNarrow && (
             <LanguagePicker>
               {() => {
                 return (
@@ -148,7 +144,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
         </div>
       </div>
 
-      {!isMobile && renderProfileButton()}
+      {!isNarrow && renderProfileButton()}
       <div className={`input-container ${isSearchOpen ? 'open' : ''}`}>
         <input
           type='text'

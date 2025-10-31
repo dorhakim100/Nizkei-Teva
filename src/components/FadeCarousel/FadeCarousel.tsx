@@ -1,15 +1,10 @@
-import React from 'react'
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
 
-// Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-
-// import required modules
-import { EffectFade, Navigation, Pagination } from 'swiper/modules'
 
 export function FadeCarousel() {
   return (
@@ -20,7 +15,12 @@ export function FadeCarousel() {
         pagination={{
           clickable: true,
         }}
-        modules={[EffectFade, Navigation, Pagination]}
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: true,
+        }}
+        modules={[Autoplay, EffectFade, Navigation, Pagination]}
         className='mySwiper'
       >
         <SwiperSlide>
