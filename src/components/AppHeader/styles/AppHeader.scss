@@ -12,6 +12,12 @@
   align-items: center;
   grid-template-columns: auto 1fr auto;
 
+  @media (max-width: $mobile-breakpoint) {
+    height: $header-height-mobile;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .logo-img {
     margin-inline: 1.5rem;
 
@@ -51,8 +57,8 @@
     .settings-container {
       display: flex;
       align-items: center;
-
       gap: 3em;
+
       color: $primary-color;
 
       .language-picker-container {
@@ -63,6 +69,36 @@
         cursor: pointer;
         height: 1.2rem;
         width: 1.2rem;
+      }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      width: fit-content;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 10px;
+      padding: 0;
+
+      .dropdown-menu {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+
+        svg {
+          height: 3rem;
+          width: 3rem;
+          color: $primary-color;
+        }
+      }
+
+      .settings-container {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        gap: 20px;
+
+        .icon {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
       }
     }
   }
@@ -103,6 +139,8 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out, z-index 0.3s ease-in-out;
 
+    // padding-inline-start: 1.5rem;
+
     z-index: -1;
     background-color: $white;
 
@@ -111,16 +149,23 @@
     justify-content: center;
     gap: 10px;
 
+    @media (max-width: $mobile-breakpoint) {
+      height: $header-height-mobile;
+      gap: 1.5rem;
+    }
+
     .icon {
-      height: 1.8rem;
-      width: 1.8rem;
+      height: 44px;
+      width: 44px;
 
       &.search-icon {
         color: $secondary-color;
+        padding: 4px;
       }
 
       &.close-icon {
         margin-inline-end: 10px;
+        color: $primary-color;
       }
     }
 
@@ -132,11 +177,12 @@
     input {
       width: 100%;
       height: 100%;
+      font-size: 1.5rem;
+      color: $primary-color;
 
       &::placeholder {
         color: $primary-color;
         font-family: inherit;
-        font-size: 1.2rem;
       }
     }
   }

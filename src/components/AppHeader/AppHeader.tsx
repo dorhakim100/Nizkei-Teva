@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -22,6 +22,8 @@ import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
 
 import headerJson from '../../assets/jsons/header.json'
+import { DropdownMenu } from '../DropdownMenu/DropdownMenu'
+import { DropdownOption } from '../../types/DropdownOption'
 interface AppHeaderProps {
   routes: Route[]
 }
@@ -46,6 +48,10 @@ export function AppHeader({ routes }: AppHeaderProps) {
 
   const [isSearchOpen, setIsSearchOpen] = useState(false)
 
+  const isMobile = useMemo(() => {
+    return dimensions.width < MOBILE_WIDTH
+  }, [dimensions.width])
+
   const navigateWithScroll = (path: string) => {
     smoothScroll()
     navigate(path)
@@ -61,11 +67,49 @@ export function AppHeader({ routes }: AppHeaderProps) {
 
   useEffect(() => {
     console.log(MOBILE_WIDTH)
-
-    if (dimensions.width < MOBILE_WIDTH) {
-      console.log(dimensions)
-    }
   }, [dimensions])
+
+  const renderRoutes = () => {
+    const routesToRender = routes.filter((route) => route.path !== '/')
+
+    if (isMobile) {
+      const options: DropdownOption[] = routesToRender.map((route) => ({
+        title: route.title[prefs.language as keyof Language],
+        onClick: () => navigateWithScroll(route.path),
+      }))
+
+      return <DropdownMenu options={options} />
+    } else {
+      return (
+        <nav>
+          <ul>
+            {routesToRender.map((route, index) => (
+              <li
+                key={index}
+                onClick={() => navigateWithScroll(route.path)}
+                className='underline-animation'
+              >
+                <Link className='bold' to={route.path}>
+                  {route.title[prefs.language as keyof Language]}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+  }
+
+  const renderProfileButton = () => {
+    return (
+      <div className='profile-container pointer'>
+        <img src={profile} alt='profile' className='icon profile-icon' />
+        <span className='bold'>
+          {headerJson.profile[prefs.language as keyof Language]}
+        </span>
+      </div>
+    )
+  }
 
   return (
     <header
@@ -81,33 +125,19 @@ export function AppHeader({ routes }: AppHeaderProps) {
       />
 
       <div className='navigation-container'>
-        <nav>
-          <ul>
-            {routes
-              .filter((route) => route.path !== '/')
-              .map((route, index) => (
-                <li
-                  key={index}
-                  onClick={() => navigateWithScroll(route.path)}
-                  className='underline-animation'
-                >
-                  <Link className='bold' to={route.path}>
-                    {route.title[prefs.language as keyof Language]}
-                  </Link>
-                </li>
-              ))}
-          </ul>
-        </nav>
+        {renderRoutes()}
         <div className='settings-container'>
-          <LanguagePicker>
-            {() => {
-              return (
-                <div className='language-picker-container bold'>
-                  {getLanguageName(prefs.language)}
-                </div>
-              )
-            }}
-          </LanguagePicker>
+          {!isMobile && (
+            <LanguagePicker>
+              {() => {
+                return (
+                  <div className='language-picker-container bold'>
+                    {getLanguageName(prefs.language)}
+                  </div>
+                )
+              }}
+            </LanguagePicker>
+          )}
           <img
             src={search}
             alt='search'
@@ -118,12 +148,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
         </div>
       </div>
 
-      <div className='profile-container pointer'>
-        <img src={profile} alt='profile' className='icon profile-icon' />
-        <span className='bold'>
-          {headerJson.profile[prefs.language as keyof Language]}
-        </span>
-      </div>
+      {!isMobile && renderProfileButton()}
       <div className={`input-container ${isSearchOpen ? 'open' : ''}`}>
         <input
           type='text'
