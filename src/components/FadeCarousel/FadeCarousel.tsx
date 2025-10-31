@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
 
@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { PlayButton } from '../PlayButton/PlayButton'
 
 const slides = [
   {
@@ -33,6 +34,17 @@ const slides = [
 export function FadeCarousel() {
   const swiperRef = useRef<SwiperRef>(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(true)
+
+  const togglePlaying = () => {
+    if (isPlaying) {
+      swiperRef.current?.swiper.autoplay.stop()
+    } else {
+      swiperRef.current?.swiper.autoplay.start()
+    }
+    setIsPlaying((prevState) => !prevState)
+  }
+
   return (
     <div className='fade-carousel-container'>
       <Swiper
@@ -58,6 +70,7 @@ export function FadeCarousel() {
         ))}
       </Swiper>
       <div className='pagination-container'>
+        <PlayButton isPlaying={isPlaying} onClick={togglePlaying} />
         {slides.map((_, index) => {
           return (
             <div
