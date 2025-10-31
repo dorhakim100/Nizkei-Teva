@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -16,6 +16,7 @@ import profile from '../../../public/icons/profile.svg'
 import { Language } from '../../types/system/Languages'
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
 import { getLanguageName, smoothScroll } from '../../services/util.service'
+import { useDimensions } from '../../hooks/useDimensions'
 
 import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
@@ -27,6 +28,8 @@ interface AppHeaderProps {
 
 export function AppHeader({ routes }: AppHeaderProps) {
   const navigate = useNavigate()
+
+  const dimensions = useDimensions()
 
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
@@ -50,6 +53,16 @@ export function AppHeader({ routes }: AppHeaderProps) {
   const closeSearch = () => {
     setIsSearchOpen(false)
   }
+
+  useEffect(() => {
+    document.body.addEventListener('cl', () => {})
+
+    return () => {}
+  }, [isSearchOpen])
+
+  useEffect(() => {
+    console.log(dimensions)
+  }, [dimensions])
 
   return (
     <header

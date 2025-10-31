@@ -166,3 +166,12 @@ export function getLanguageName(language: string): string {
   }
   return langToReturn
 }
+
+export function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window
+
+  return {
+    width,
+    height,
+  }
+}
