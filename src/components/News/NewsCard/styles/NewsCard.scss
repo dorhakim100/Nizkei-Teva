@@ -1,7 +1,63 @@
 .news-card {
+  // justify-self: start;
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: auto 250px;
+  gap: 1rem;
+  text-align: start;
+  align-items: center;
+  height: fit-content;
+
+  &:first-of-type {
+    grid-template-columns: 1fr;
+    position: relative;
+    align-self: start;
+
+    // grid-column: 1/4;
+
+    .media {
+      img {
+        z-index: 1;
+        width: 100%;
+        object-fit: cover;
+
+        background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 90%);
+      }
+
+      // background-color: $primary-color;
+    }
+
+    .content {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: $white;
+
+      padding: 1rem;
+
+      // background-color: $primary-color;
+    }
+  }
+
   img {
     aspect-ratio: 204 / 140;
+    object-fit: cover;
+    min-width: 204px;
+    border-radius: 6px;
+
+    @media (max-width: $narrow-breakpoint) {
+      width: 127px;
+    }
+  }
+
+  .content {
+    .summary {
+      max-width: 70%;
+      text-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // white-space: nowrap;
+    }
   }
 }

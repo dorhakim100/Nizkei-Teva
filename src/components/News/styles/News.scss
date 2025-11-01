@@ -3,7 +3,11 @@
   display: grid;
   gap: 2rem;
   justify-items: center;
-  padding: 1em 150px;
+  // max-width: 1470px;
+
+  @media (min-width: $narrow-breakpoint) {
+    padding: 1em 150px;
+  }
 
   .news-title {
     margin: 0;
@@ -11,6 +15,7 @@
 
   .news-list {
     display: grid;
+    gap: 1rem 2rem;
 
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
@@ -23,6 +28,10 @@
       &:first-of-type {
         grid-column: 1/3;
         grid-row: 1/-1;
+        @media (min-width: $narrow-breakpoint) {
+          justify-self: stretch;
+        }
+
         @media (max-width: $narrow-breakpoint) {
           grid-column: 1/2;
           grid-row: 1/2;

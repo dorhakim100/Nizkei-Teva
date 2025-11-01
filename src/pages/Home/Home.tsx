@@ -18,7 +18,7 @@ const newsItems: NewsItem[] = [
     title: { en: 'Farmers Market Opens', he: 'שוק האיכרים נפתח' },
     summary: {
       en: 'Seasonal produce now available every Friday downtown.',
-      he: 'תוצרת עונתית זמינה כעת בכל יום שישי במרכז העיר.',
+      he: 'תוצרת עונתית זמינה כעת בכל יום שישי במרכז העיר.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.',
     },
     imageUrl: '/imgs/image 49.png',
     linkUrl: 'https://example.com/news/1',
@@ -29,7 +29,7 @@ const newsItems: NewsItem[] = [
     title: { en: 'New Irrigation Project', he: 'פרויקט השקיה חדש' },
     summary: {
       en: 'Improving water efficiency across regional farms.',
-      he: 'שיפור יעילות המים בחוות האזור.',
+      he: 'שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.',
     },
     imageUrl: '/imgs/image 97.png',
     linkUrl: 'https://example.com/news/2',
@@ -40,7 +40,7 @@ const newsItems: NewsItem[] = [
     title: { en: 'Organic Certification', he: 'תעודת אורגני' },
     summary: {
       en: 'Three new growers achieved organic certification.',
-      he: 'שלושה מגדלים חדשים קיבלו תעודת אורגני.',
+      he: 'שלושה מגדלים חדשים קיבלו תעודת אורגני.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.',
     },
     imageUrl: '/imgs/image 98.png',
     linkUrl: 'https://example.com/news/3',
@@ -51,7 +51,7 @@ const newsItems: NewsItem[] = [
     title: { en: 'Organic Certification', he: 'תעודת אורגני' },
     summary: {
       en: 'Three new growers achieved organic certification.',
-      he: 'שלושה מגדלים חדשים קיבלו תעודת אורגני.',
+      he: 'שלושה מגדלים חדשים קיבלו תעודת אורגני.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.שיפור יעילות המים בחוות האזור.',
     },
     imageUrl: '/imgs/image 98.png',
     linkUrl: 'https://example.com/news/3',

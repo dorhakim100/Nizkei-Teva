@@ -14,26 +14,26 @@ export function NewsCard({ item, language, onClick }: NewsCardProps) {
   return (
     <article
       className='news-card'
-      onClick={() => onClick?.(item)}
+      // onClick={() => onClick?.(item)}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : -1}
     >
       {item.imageUrl && (
-        <div className='news-card__media'>
+        <div className='media'>
           <img
             src={item.imageUrl}
             alt={typeof title === 'string' ? title : ''}
           />
         </div>
       )}
-      <div className='news-card__content'>
-        <h3 className='news-card__title'>{title}</h3>
-        {summary && <p className='news-card__summary'>{summary}</p>}
+      <div className='content'>
         {item.publishedAt && (
-          <time className='news-card__date' dateTime={item.publishedAt}>
+          <time className='date' dateTime={item.publishedAt}>
             {item.publishedAt}
           </time>
         )}
+        <h4 className='title'>{title}</h4>
+        {summary && <p className='summary'>{summary}</p>}
       </div>
     </article>
   )
