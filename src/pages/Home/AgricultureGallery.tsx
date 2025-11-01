@@ -11,7 +11,7 @@ export function AgricultureGallery() {
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
   return (
-    <div className='agriculture-gallery-container'>
+    <div className={`agriculture-gallery-container ${prefs.language}`}>
       <div className='content-container'>
         <div className='text-container'>
           <h3>

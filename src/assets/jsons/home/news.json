@@ -3,6 +3,14 @@
     "he": "מה חדש בקנט?",
     "en": "What's New in Kanat?"
   },
+  "button": {
+    "text": {
+      "he": "לכל החדשות",
+      "en": "All News"
+    },
+    "color": "primary",
+    "link": "https://www.kanat.co.il/category/news/"
+  },
   "items": [
     {
       "id": "n1",

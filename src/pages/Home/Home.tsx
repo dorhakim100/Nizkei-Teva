@@ -26,10 +26,10 @@ export function Home() {
       </h3>
       <GalleryImgs imgs={galleryJson.imgs} />
       <AgricultureGallery />
-      <h3 className='news-title'>
-        {newsJson.title[prefs.language as keyof Language]}
-      </h3>
+
       <News
+        title={newsJson.title[prefs.language as keyof Language]}
+        button={newsJson.button}
         items={newsJson.items}
         onItemClick={(item) => {
           if (item.linkUrl) window.open(item.linkUrl, '_blank')

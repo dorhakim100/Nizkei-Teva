@@ -29,7 +29,7 @@ export function NewsCard({ item, language, onClick }: NewsCardProps) {
       <div className='content'>
         {item.publishedAt && (
           <time
-            className='date'
+            className='date bold'
             dateTime={new Date(item.publishedAt).toLocaleDateString(language)}
           >
             {new Date(item.publishedAt).toLocaleDateString(language)}

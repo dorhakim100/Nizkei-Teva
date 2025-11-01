@@ -1,8 +1,36 @@
 .news-container {
   margin: 0 auto;
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   gap: 2rem;
   justify-items: center;
+  margin-top: 2rem;
+  // padding-inline-start: 150px;
+  h3 {
+    text-align: start;
+    justify-self: start;
+  }
+
+  .custom-button {
+    justify-self: end;
+  }
+
+  @media (max-width: $narrow-breakpoint) {
+    gap: 0px;
+    h3 {
+      grid-column: 1/-1;
+      justify-self: center;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .custom-button {
+      grid-column: 1/-1;
+      grid-row: 3/4;
+      justify-self: center;
+      margin-bottom: 2rem;
+    }
+  }
   // max-width: 1470px;
 
   @media (min-width: $narrow-breakpoint) {
@@ -14,6 +42,7 @@
   }
 
   .news-list {
+    grid-column: 1/-1;
     display: grid;
     gap: 1rem 2rem;
 

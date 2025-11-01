@@ -14,6 +14,14 @@
     position: relative;
     align-self: start;
 
+    time {
+      color: $white !important;
+    }
+    h4 {
+      color: $white !important;
+      font-size: 1.5rem !important;
+    }
+
     .media {
       img,
       iframe {
@@ -28,7 +36,11 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 90%);
+        background: linear-gradient(
+          315deg,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
       }
     }
 
@@ -66,8 +78,14 @@
   }
 
   .content {
+    time {
+      opacity: 0.5;
+      color: $primary-color;
+    }
     h4 {
       margin-bottom: 0rem;
+      color: $primary-color;
+      font-size: 1.2rem;
     }
     .summary-container {
       display: flex;
