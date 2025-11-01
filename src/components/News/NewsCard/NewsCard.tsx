@@ -33,7 +33,14 @@ export function NewsCard({ item, language, onClick }: NewsCardProps) {
           </time>
         )}
         <h4 className='title'>{title}</h4>
-        {summary && <p className='summary'>{summary}</p>}
+        {summary && (
+          <div className='summary-container'>
+            <p className='summary'>{summary}</p>
+            <a className='read-more underline-animation bold pointer'>
+              קרא עוד
+            </a>
+          </div>
+        )}
       </div>
     </article>
   )

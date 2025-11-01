@@ -12,8 +12,6 @@
     position: relative;
     align-self: start;
 
-    // grid-column: 1/4;
-
     .media {
       img {
         z-index: 1;
@@ -22,8 +20,6 @@
 
         background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 90%);
       }
-
-      // background-color: $primary-color;
     }
 
     .content {
@@ -35,8 +31,14 @@
       color: $white;
 
       padding: 1rem;
+    }
 
-      // background-color: $primary-color;
+    a {
+      color: $white !important;
+
+      &::before {
+        background-color: $white !important;
+      }
     }
   }
 
@@ -52,12 +54,27 @@
   }
 
   .content {
-    .summary {
+    .summary-container {
+      display: flex;
+      height: fit-content;
+      justify-content: space-between;
+      gap: 3px;
       max-width: 70%;
+      text-overflow: ellipsis;
       text-wrap: nowrap;
+
+      a {
+        color: $secondary-color;
+
+        &::before {
+          background-color: $secondary-color;
+        }
+      }
+    }
+    .summary {
       overflow: hidden;
       text-overflow: ellipsis;
-      // white-space: nowrap;
+      margin-bottom: 0px;
     }
   }
 }

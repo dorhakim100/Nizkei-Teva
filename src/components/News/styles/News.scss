@@ -21,7 +21,10 @@
     grid-template-columns: repeat(3, 1fr);
 
     @media (max-width: $narrow-breakpoint) {
-      grid-template-columns: 1fr;
+      display: block;
+      article {
+        margin-bottom: 2rem;
+      }
     }
 
     .news-card {
