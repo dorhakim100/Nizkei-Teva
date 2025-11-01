@@ -10,7 +10,6 @@ type NewsCardProps = {
 export function NewsCard({ item, language, onClick }: NewsCardProps) {
   const title = item.title[language] || ''
   const summary = item.summary?.[language] || ''
-
   return (
     <article
       className='news-card'
@@ -18,32 +17,36 @@ export function NewsCard({ item, language, onClick }: NewsCardProps) {
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : -1}
     >
-      {item.imageUrl && (
+      {item.media && (
         <div className='media'>
-          <img
-            src={item.imageUrl}
-            alt={typeof title === 'string' ? title : ''}
-          />
+          {item.media.includes('/embed/') ? (
+            <iframe src={item.media} title={title} />
+          ) : (
+            <img src={item.media} alt={title} />
+          )}
         </div>
       )}
       <div className='content'>
         {item.publishedAt && (
-          <time className='date' dateTime={item.publishedAt}>
-            {item.publishedAt}
+          <time
+            className='date'
+            dateTime={new Date(item.publishedAt).toLocaleDateString(language)}
+          >
+            {new Date(item.publishedAt).toLocaleDateString(language)}
           </time>
         )}
         <h4 className='title'>{title}</h4>
         {summary && (
           <div className='summary-container'>
             <p className='summary'>{summary}</p>
-            <a
-              className='read-more underline-animation bold pointer'
-              href={item.linkUrl}
-            >
-              קרא עוד
-            </a>
           </div>
         )}
+        <a
+          className='read-more underline-animation bold pointer'
+          href={item.linkUrl}
+        >
+          {language === 'he' ? 'קרא עוד' : 'Read more'}
+        </a>
       </div>
     </article>
   )

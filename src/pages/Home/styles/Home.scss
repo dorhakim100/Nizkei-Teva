@@ -1,6 +1,13 @@
 .home-container {
   h3 {
     font-size: 2.3rem;
+    color: $primary-color;
+
+    &.news-title {
+      text-align: start;
+      padding-inline-start: 150px;
+      margin-top: 2rem;
+    }
   }
   .gallery-title {
     font-size: 2.3rem;

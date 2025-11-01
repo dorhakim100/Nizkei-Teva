@@ -4,7 +4,7 @@ export interface NewsItem {
   id: string
   title: Partial<Language>
   summary?: Partial<Language>
-  imageUrl?: string
+  media?: string
   linkUrl?: string
-  publishedAt?: string
+  publishedAt?: number
 }
