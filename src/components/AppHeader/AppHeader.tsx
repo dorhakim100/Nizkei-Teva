@@ -85,7 +85,7 @@ export function AppHeader({ routes }: AppHeaderProps) {
                 onClick={() => navigateWithScroll(route.path)}
                 className='underline-animation'
               >
-                <Link className='bold' to={route.path}>
+                <Link className={`bold ${prefs.language}`} to={route.path}>
                   {route.title[prefs.language as keyof Language]}
                 </Link>
               </li>

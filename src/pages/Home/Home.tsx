@@ -29,7 +29,12 @@ export function Home() {
 
       <News
         title={newsJson.title[prefs.language as keyof Language]}
-        button={newsJson.button}
+        button={{
+          ...newsJson.button,
+          onClick: () => {
+            window.open(newsJson.button.link, '_blank')
+          },
+        }}
         items={newsJson.items}
         onItemClick={(item) => {
           if (item.linkUrl) window.open(item.linkUrl, '_blank')
