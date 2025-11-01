@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux'
 
 import { FadeCarousel } from '../../components/FadeCarousel/FadeCarousel'
-import { CustomButton } from '../../components/CustomButton/CustomButton'
 
 import { RootState } from '../../store/store'
 
@@ -15,6 +14,7 @@ export function Home() {
   return (
     <div className='home-container'>
       <FadeCarousel slides={carouselJson.slides} />
+      <h3></h3>
     </div>
   )
 }

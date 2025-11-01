@@ -1,0 +1,29 @@
+{
+  "title": {
+    "he": "ענפים מבוטחים",
+    "en": "Insured branches"
+  },
+  "imgs": [
+    {
+      "title": {
+        "he": "ענפי הצומח",
+        "en": "Plants branches"
+      },
+      "img": "../../../../public/imgs/image 114.png"
+    },
+    {
+      "title": {
+        "he": "ענפי החי",
+        "en": "Animals branches"
+      },
+      "img": "../../../../public/imgs/image 110.png"
+    },
+    {
+      "title": {
+        "he": "ענפים כלליים",
+        "en": "General branches"
+      },
+      "img": "../../../../public/imgs/image 108.png"
+    }
+  ]
+}
