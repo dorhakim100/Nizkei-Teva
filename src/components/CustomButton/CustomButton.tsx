@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 import { PropsWithChildren } from 'react'
 import { RootState } from '../../store/store'
 
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
 type CustomButtonProps = {
   onClick: () => void
@@ -22,9 +22,10 @@ export function CustomButton({
   )
   return (
     <button className={`custom-button ${color}`} onClick={onClick}>
-      {prefs.language === 'he' ? <ArrowBackIosNewIcon /> : icon}
+      {icon}
       {children}
-      {prefs.language === 'en' ? icon : <ArrowForwardIosIcon />}
+      {prefs.language === 'en' && <KeyboardArrowRightIcon />}
+      {prefs.language === 'he' && <KeyboardArrowLeftIcon />}
     </button>
   )
 }

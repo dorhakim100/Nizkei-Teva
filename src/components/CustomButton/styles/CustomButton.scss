@@ -1,0 +1,30 @@
+.custom-button {
+  color: $white;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  transition: 0.4s ease all;
+  padding: 14px 24px;
+  border-radius: 6px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+
+  border: none;
+  &.primary {
+    background-color: $primary-color;
+    &:hover {
+      background-color: $primary-color-light;
+    }
+  }
+  &.secondary {
+    background-color: $secondary-color;
+    &:hover {
+      background-color: $secondary-color-dark;
+    }
+  }
+}
