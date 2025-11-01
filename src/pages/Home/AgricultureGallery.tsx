@@ -46,7 +46,7 @@ export function AgricultureGallery() {
                 alt={img.text[prefs.language as keyof Language]}
               />
               <div className='text-container'>
-                <h3>{img.text[prefs.language as keyof Language]}</h3>
+                <h4>{img.text[prefs.language as keyof Language]}</h4>
               </div>
             </div>
           ))}
