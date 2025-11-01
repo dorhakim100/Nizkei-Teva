@@ -1,51 +1,76 @@
 export function makeId(length: number = 6): string {
-  var txt = ''
-  var possible =
+  let txt = ''
+  const possible =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
-  for (var i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     txt += possible.charAt(Math.floor(Math.random() * possible.length))
   }
 
   return txt
 }
 
-export function makeLorem(size: number = 100): string {
-  var words = [
-    'The sky',
-    'above',
-    'the port',
-    'was',
-    'the color of television',
-    'tuned',
-    'to',
-    'a dead channel',
-    '.',
-    'All',
-    'this happened',
-    'more or less',
-    '.',
-    'I',
-    'had',
-    'the story',
-    'bit by bit',
-    'from various people',
-    'and',
-    'as generally',
-    'happens',
-    'in such cases',
-    'each time',
-    'it',
-    'was',
-    'a different story',
-    '.',
-    'It',
-    'was',
-    'a pleasure',
-    'to',
-    'burn',
-  ]
-  var txt = ''
+export function makeLorem(size: number = 100, language: string = 'en'): string {
+  const words =
+    language === 'en'
+      ? [
+          'The sky',
+          'above',
+          'the port',
+          'was',
+          'the color of television',
+          'tuned',
+          'to',
+          'a dead channel',
+          '.',
+          'All',
+          'this happened',
+          'more or less',
+          '.',
+          'I',
+          'had',
+          'the story',
+          'bit by bit',
+          'from various people',
+          'and',
+          'as generally',
+          'happens',
+          'in such cases',
+          'each time',
+          'it',
+          'was',
+          'a different story',
+          '.',
+          'It',
+          'was',
+          'a pleasure',
+          'to',
+          'burn',
+        ]
+      : [
+          'השמיים',
+          'מעל',
+          'הנמל',
+          'היו',
+          'מכוון',
+          'לערוץ',
+          'מת',
+          'כל',
+          'אני',
+          'אספתי',
+          'כרגיל',
+          'קורה',
+          'פעם',
+          'זה',
+          'היה',
+          'אחר',
+          'זה',
+          'היה',
+          'תענוג',
+          'שרוף',
+        ]
+
+  let txt = ''
   while (size > 0) {
     size--
     txt += words[Math.floor(Math.random() * words.length)] + ' '
@@ -61,47 +86,12 @@ export function getRandomIntInclusive(min: number, max: number): number {
 
 export function randomPastTime() {
   const HOUR = 1000 * 60 * 60
-  const DAY = 1000 * 60 * 60 * 24
+  // const DAY = 1000 * 60 * 60 * 24
   const WEEK = 1000 * 60 * 60 * 24 * 7
 
   const pastTime = getRandomIntInclusive(HOUR, WEEK)
   return Date.now() - pastTime
 }
-
-export function debounce<T extends (...args: any[]) => any>(
-  func: T,
-  timeout: number = 300
-): (...args: Parameters<T>) => void {
-  let timer: ReturnType<typeof setTimeout>
-  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
-    const context = this
-    clearTimeout(timer)
-    timer = setTimeout(() => {
-      func.apply(context, args)
-    }, timeout)
-  }
-}
-
-// export function saveToStorage(key, value) {
-//   localStorage.setGame(key, JSON.stringify(value))
-// }
-
-// export function loadFromStorage(key) {
-//   const data = localStorage.getGame(key)
-//   return data ? JSON.parse(data) : undefined
-// }
-
-// export function onPageNavigation(diff, filter, setFilter, maxPage) {
-//   if (filter.pageIdx + diff === -1) return
-
-//   if (filter.pageIdx + diff === maxPage) {
-//     setFilter({ ...filter, pageIdx: 0 })
-
-//     return
-//   }
-
-//   setFilter({ ...filter, pageIdx: filter.pageIdx + diff })
-// }
 
 export function capitalizeFirstLetter(string: string): string {
   return string.charAt(0).toUpperCase() + string.slice(1)
