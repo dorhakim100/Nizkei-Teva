@@ -1,0 +1,27 @@
+{
+  "title": {
+    "he": "הגלרייה החקלאית",
+    "en": "Agriculture gallery"
+  },
+  "description": {
+    "he": "תחרות \"הגלריה החקלאית\" של קנט חושפת לציבור הרחב את תרומתה הגדולה של החקלאות לפיתוחה של המדינה ואת יופיים המרהיב של החקלאות, הטבע והנוף בישראל.",
+    "en": "The \"Agriculture Gallery\" competition by Kanat reveals the large contribution of agriculture to the development of the country and the beautiful sights of agriculture, nature and the environment in Israel."
+  },
+  "backgroundImg": "../../../../public/imgs/image 112.png",
+  "imgs": [
+    {
+      "img": "../../../../public/imgs/image 97.png",
+      "text": {
+        "he": "צילום: אשר גולן",
+        "en": "Photo: Asher Golan"
+      }
+    },
+    {
+      "img": "../../../../public/imgs/image 98.png",
+      "text": {
+        "he": "צילום: בינה כהן",
+        "en": "Photo: Bina Cohen"
+      }
+    }
+  ]
+}
