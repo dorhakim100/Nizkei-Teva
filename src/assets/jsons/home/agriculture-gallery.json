@@ -7,7 +7,16 @@
     "he": "תחרות \"הגלריה החקלאית\" של קנט חושפת לציבור הרחב את תרומתה הגדולה של החקלאות לפיתוחה של המדינה ואת יופיים המרהיב של החקלאות, הטבע והנוף בישראל.",
     "en": "The \"Agriculture Gallery\" competition by Kanat reveals the large contribution of agriculture to the development of the country and the beautiful sights of agriculture, nature and the environment in Israel."
   },
+  "button": {
+    "text": {
+      "he": "לצפייה בגלריה",
+      "en": "View the gallery"
+    },
+    "link": "https://gallery.kanat.co.il/",
+    "color": "secondary"
+  },
   "backgroundImg": "../../../../public/imgs/image 112.png",
+  "paleLogo": "../../../../public/imgs/image 49.png",
   "imgs": [
     {
       "img": "../../../../public/imgs/image 97.png",
