@@ -21,7 +21,10 @@ export function CustomButton({
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
   return (
-    <button className={`custom-button ${color}`} onClick={onClick}>
+    <button
+      className={`custom-button ${color} ${prefs.language}`}
+      onClick={onClick}
+    >
       {icon}
       {children}
       {prefs.language === 'en' && <KeyboardArrowRightIcon />}

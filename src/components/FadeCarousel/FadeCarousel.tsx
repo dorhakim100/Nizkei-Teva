@@ -14,6 +14,7 @@ import { Slide } from '../../types/Carousel/Slide'
 import { Language } from '../../types/system/Languages'
 
 import agricultureSticker from '../../../public/imgs/agriculture-sticker.png'
+import { CustomButton } from '../CustomButton/CustomButton'
 
 export function FadeCarousel({ slides }: { slides: Slide[] }) {
   const prefs = useSelector(
@@ -73,6 +74,16 @@ export function FadeCarousel({ slides }: { slides: Slide[] }) {
                   <h4 className='bold'>
                     {slide.h4[prefs.language as keyof Language]}
                   </h4>
+                )}
+                {slide.button.isButton && (
+                  <CustomButton
+                    onClick={() => {
+                      window.open(slide.button.link, '_blank')
+                    }}
+                    color={slide.button.color}
+                  >
+                    {slide.button.text[prefs.language as keyof Language]}
+                  </CustomButton>
                 )}
               </div>
             </div>

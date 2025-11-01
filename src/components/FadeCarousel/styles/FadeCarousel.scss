@@ -36,7 +36,7 @@
         width: 100%;
         aspect-ratio: 1920 / 620;
         object-fit: cover;
-        min-height: 590px;
+        min-height: 382px;
 
         @media (max-width: $mobile-width) {
           height: calc(120vw);
@@ -51,10 +51,10 @@
         left: 0;
         bottom: 0;
         right: 0;
-        margin: 0 40px;
         margin: 0 160px;
 
-        padding: 0 20px;
+        padding: 20px;
+        // padding: 20px;
 
         display: grid;
         align-items: center;
@@ -68,7 +68,11 @@
         }
 
         .hs-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
           min-height: 266px;
+
           .agriculture-sticker {
             // width: 116px;
             width: fit-content;
@@ -77,28 +81,27 @@
             justify-self: start;
             object-fit: contain;
           }
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          // padding: 0 20px;
-
           h2 {
-            font-size: 2.8rem;
-
-            line-height: 1.2;
+            font-size: clamp(2.2rem, 3vw, 60px);
+            line-height: 1;
             margin-bottom: 0rem;
           }
           h3 {
-            font-size: 2rem;
+            font-size: clamp(1.8rem, 3vw, 40px);
 
-            line-height: 1.2;
-            margin-bottom: 0rem;
+            line-height: 1;
+            margin-bottom: 0.3rem;
           }
           h4 {
             font-size: 1.125rem;
             font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 0rem;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+          }
+          .custom-button {
+            margin-top: 0.5rem;
+            justify-self: start;
+            width: fit-content;
           }
         }
       }
