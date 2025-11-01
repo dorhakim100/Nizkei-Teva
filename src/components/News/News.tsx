@@ -11,14 +11,13 @@ type NewsProps = {
   onItemClick?: (item: NewsItem) => void
 }
 
-export function News({ title, items, onItemClick }: NewsProps) {
+export function News({ items, onItemClick }: NewsProps) {
   const prefs = useSelector(
     (stateSelector: RootState) => stateSelector.systemModule.prefs
   )
 
   return (
     <section className={`news-container ${prefs.language}`}>
-      {title && <h2 className='news-title'>{title}</h2>}
       <div className='news-list'>
         {items.map((item) => (
           <NewsCard

@@ -1,0 +1,56 @@
+{
+  "title": {
+    "he": "מה חדש בקנט?",
+    "en": "What's New in Kanat?"
+  },
+  "items": [
+    {
+      "id": "n1",
+      "media": "../../../../public/imgs/image 54.png",
+      "title": {
+        "he": "שוק האיכרים נפתח",
+        "en": "Farmers Market Opens"
+      },
+      "summary": {
+        "he": "תוצרת עונתית טרייה זמינה כעת בכל יום שישי במרכז העיר. המבקרים יוכלו ליהנות ממגוון ירקות, פירות ותוצרת מקומית מאיכות גבוהה.",
+        "en": "Fresh seasonal produce is now available every Friday in the city center. Visitors can enjoy a wide variety of high-quality fruits, vegetables, and local products."
+      }
+    },
+    {
+      "id": "n2",
+      "media": "https://www.youtube.com/watch?v=JbGi_Uk8mY8",
+      "title": {
+        "he": "פרויקט השקיה חדש",
+        "en": "New Irrigation Project"
+      },
+      "summary": {
+        "he": "מערכת השקיה מתקדמת הותקנה בחוות האזור ומפחיתה את צריכת המים בעשרות אחוזים. החקלאים מדווחים על חסכון משמעותי ושיפור בתנובת היבול.",
+        "en": "A new advanced irrigation system has been installed in local farms, reducing water usage significantly. Farmers report major savings and improved crop yield."
+      }
+    },
+    {
+      "id": "n3",
+      "media": "../../../../public/imgs/image 102.png",
+      "title": {
+        "he": "תעודה אורגנית חדשה",
+        "en": "New Organic Certification"
+      },
+      "summary": {
+        "he": "שלושה מגדלים נוספים מהאזור קיבלו תעודת אורגני לאחר עמידה בתנאי גידול קפדניים. הצרכנים ייהנו ממוצרים איכותיים ובריאים יותר.",
+        "en": "Three more growers in the region received official organic certification after meeting strict cultivation standards. Consumers will now have access to healthier, higher-quality products."
+      }
+    },
+    {
+      "id": "n4",
+      "media": "../../../../public/imgs/image 105.png",
+      "title": {
+        "he": "מרכז מבקרים חדש",
+        "en": "New Visitor Center"
+      },
+      "summary": {
+        "he": "מרכז מבקרים חדש נפתח ומציג למבקרים את תהליכי הגידול, הבקרה והפיקוח של הייצור החקלאי. במקום יתקיימו סיורים מודרכים וסדנאות לילדים.",
+        "en": "A new visitor center has opened, showcasing local agricultural production, quality control, and sustainability efforts. Guided tours and educational workshops for children are now available."
+      }
+    }
+  ]
+}

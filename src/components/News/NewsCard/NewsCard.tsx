@@ -36,7 +36,10 @@ export function NewsCard({ item, language, onClick }: NewsCardProps) {
         {summary && (
           <div className='summary-container'>
             <p className='summary'>{summary}</p>
-            <a className='read-more underline-animation bold pointer'>
+            <a
+              className='read-more underline-animation bold pointer'
+              href={item.linkUrl}
+            >
               קרא עוד
             </a>
           </div>

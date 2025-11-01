@@ -72,8 +72,10 @@ export function Home() {
       </h3>
       <GalleryImgs imgs={galleryJson.imgs} />
       <AgricultureGallery />
+      <h3 className='news-title'>
+        {prefs.language === 'he' ? 'חדשות' : 'Latest News'}
+      </h3>
       <News
-        title={prefs.language === 'he' ? 'חדשות' : 'Latest News'}
         items={newsItems}
         onItemClick={(item) => {
           if (item.linkUrl) window.open(item.linkUrl, '_blank')
