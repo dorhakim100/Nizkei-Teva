@@ -2,15 +2,21 @@
   display: grid;
   grid-auto-flow: column;
 
+  @media (max-width: $mobile-width) {
+    grid-auto-flow: row;
+  }
+
   .img-container {
     text-align: start;
     display: grid;
     grid-template-rows: 1fr auto;
     gap: 35px;
 
-    &:first-of-type {
-      .text-container::before {
-        display: none;
+    @media (min-width: $mobile-width) {
+      &:first-of-type {
+        .text-container::before {
+          display: none;
+        }
       }
     }
 
@@ -42,7 +48,7 @@
         top: 50%;
         transform: translateY(-50%);
 
-        width: 2px;
+        width: 1px;
         height: 100%;
         right: -37px;
 
@@ -54,6 +60,16 @@
         &::before {
           right: auto;
           left: -37px;
+        }
+      }
+      @media (max-width: $mobile-width) {
+        &::before {
+          right: -15px;
+        }
+        &.en {
+          &::before {
+            left: -15px;
+          }
         }
       }
     }
