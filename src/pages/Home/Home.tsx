@@ -17,7 +17,9 @@ export function Home() {
   return (
     <div className='home-container'>
       <FadeCarousel slides={carouselJson.slides} />
-      <h3>{galleryJson.title[prefs.language as keyof Language]}</h3>
+      <h3 className='gallery-title'>
+        {galleryJson.title[prefs.language as keyof Language]}
+      </h3>
       <GalleryImgs imgs={galleryJson.imgs} />
     </div>
   )
