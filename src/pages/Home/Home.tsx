@@ -46,6 +46,17 @@ const newsItems: NewsItem[] = [
     linkUrl: 'https://example.com/news/3',
     publishedAt: '2025-10-12',
   },
+  {
+    id: 'n4',
+    title: { en: 'Organic Certification', he: 'תעודת אורגני' },
+    summary: {
+      en: 'Three new growers achieved organic certification.',
+      he: 'שלושה מגדלים חדשים קיבלו תעודת אורגני.',
+    },
+    imageUrl: '/imgs/image 98.png',
+    linkUrl: 'https://example.com/news/3',
+    publishedAt: '2025-10-12',
+  },
 ]
 
 export function Home() {

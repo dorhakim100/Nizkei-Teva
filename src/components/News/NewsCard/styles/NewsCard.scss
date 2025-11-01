@@ -1,40 +1,7 @@
 .news-card {
-  display: flex;
-  flex-direction: column;
-  background-color: $white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-
-  &__media {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-color: #f3f3f3;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  }
-
-  &__content {
-    padding: 16px;
-  }
-
-  &__title {
-    margin: 0 0 8px;
-    font-size: 1.1rem;
-  }
-
-  &__summary {
-    margin: 0 0 12px;
-    color: #555;
-  }
-
-  &__date {
-    font-size: 0.85rem;
-    color: #888;
+  display: grid;
+  grid-auto-flow: column;
+  img {
+    aspect-ratio: 204 / 140;
   }
 }

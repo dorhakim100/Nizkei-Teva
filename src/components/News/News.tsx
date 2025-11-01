@@ -17,7 +17,7 @@ export function News({ title, items, onItemClick }: NewsProps) {
   )
 
   return (
-    <section className={`news ${prefs.language}`}>
+    <section className={`news-container ${prefs.language}`}>
       {title && <h2 className='news-title'>{title}</h2>}
       <div className='news-list'>
         {items.map((item) => (
