@@ -1,0 +1,67 @@
+.dooble-footer {
+  background-color: $primary-color-dark;
+  color: $white;
+  padding: 40px 20px;
+  height: fit-content;
+  text-align: start;
+  // padding: 1em $side-padding;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+
+  .dooble-items-container {
+    justify-self: start;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    padding: 0 $side-padding;
+
+    @media (max-width: $medium-breakpoint) {
+      padding: 0 1rem;
+    }
+
+    .dooble-item {
+      position: relative;
+      justify-self: start;
+
+      &:first-of-type {
+        cursor: default;
+        &::before {
+          display: none;
+        }
+      }
+
+      h5 {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px;
+        // width: 100%;
+        width: 1px;
+        height: 50%;
+        background-color: $white;
+      }
+
+      &:last-of-type {
+        justify-self: end;
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .underline-animation {
+    &::before {
+      height: 1px;
+      background-color: $white;
+    }
+  }
+}

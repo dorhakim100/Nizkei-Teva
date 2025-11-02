@@ -18,6 +18,7 @@ import TelegramIcon from '@mui/icons-material/Telegram'
 
 import { CustomButton } from '../CustomButton/CustomButton'
 
+import { DoobleFooter } from '../DoobleFooter/DoobleFooter'
 import footerJson from '../../assets/jsons/footer/footer.json'
 
 export function AppFooter() {
@@ -104,96 +105,101 @@ export function AppFooter() {
   }
 
   return (
-    <footer
-      className={`app-footer full ${prefs.isDarkMode ? 'dark-mode' : ''}`}
-    >
-      <div className='footer-grid'>
-        <div className='footer-logo'>
-          <img src={'/logos/image 60.png'} alt='Kanat logo' />
-        </div>
-        <Divider className='divider mobile-only' />
+    <>
+      <footer
+        className={`app-footer full ${prefs.isDarkMode ? 'dark-mode' : ''}`}
+      >
+        <div className='footer-grid'>
+          <div className='footer-logo'>
+            <img src={'/logos/image 60.png'} alt='Kanat logo' />
+          </div>
+          <Divider className='divider mobile-only' />
 
-        <div className='footer-cta'>
-          <h3 className='footer-title'>{footerJson.title[lang]}</h3>
-          <CustomButton
-            color={footerJson.button.color}
-            onClick={() => openLink(footerJson.button.link)}
-          >
-            {footerJson.button.text[lang]}
-          </CustomButton>
+          <div className='footer-cta'>
+            <h3 className='footer-title'>{footerJson.title[lang]}</h3>
+            <CustomButton
+              color={footerJson.button.color}
+              onClick={() => openLink(footerJson.button.link)}
+            >
+              {footerJson.button.text[lang]}
+            </CustomButton>
 
-          <div className='footer-contact'>
-            <div className='contact-row'>
-              <span>
-                {renderContactTitle('address')}
-                {footerJson.address[lang].split('\n').map((line, idx) => (
-                  <span key={`footer-address-line-${idx}`}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </span>
-            </div>
-            <div className='contact-row'>
-              {renderContactTitle('phone')}
-              <a
-                className='pointer underline-animation'
-                onClick={() => openLink(`tel:${footerJson.links[0].value}`)}
-              >
-                {footerJson.links[0].value}
-              </a>
-            </div>
-            <div className='contact-row'>
-              {renderContactTitle('fax')}
+            <div className='footer-contact'>
+              <div className='contact-row'>
+                <span>
+                  {renderContactTitle('address')}
+                  {footerJson.address[lang].split('\n').map((line, idx) => (
+                    <span key={`footer-address-line-${idx}`}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </span>
+              </div>
+              <div className='contact-row'>
+                {renderContactTitle('phone')}
+                <a
+                  className='pointer underline-animation'
+                  onClick={() => openLink(`tel:${footerJson.links[0].value}`)}
+                >
+                  {footerJson.links[0].value}
+                </a>
+              </div>
+              <div className='contact-row'>
+                {renderContactTitle('fax')}
 
-              <a
-                className='pointer underline-animation'
-                onClick={() => openLink(`tel:${footerJson.links[1].value}`)}
-              >
-                {footerJson.links[1].value}
-              </a>
-            </div>
-            <div className='contact-row'>
-              {renderContactTitle('mail')}
-              <a
-                className='pointer underline-animation'
-                onClick={() => openLink(`mailto:${footerJson.links[2].value}`)}
-              >
-                {footerJson.links[2].value}
-              </a>
+                <a
+                  className='pointer underline-animation'
+                  onClick={() => openLink(`tel:${footerJson.links[1].value}`)}
+                >
+                  {footerJson.links[1].value}
+                </a>
+              </div>
+              <div className='contact-row'>
+                {renderContactTitle('mail')}
+                <a
+                  className='pointer underline-animation'
+                  onClick={() =>
+                    openLink(`mailto:${footerJson.links[2].value}`)
+                  }
+                >
+                  {footerJson.links[2].value}
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className='footer-socials'>
-          {socials.map((s) => (
-            <div
-              key={s.key}
-              className='social-icon'
-              onClick={() => openLink(s.url)}
-              aria-label={s.key}
-            >
-              {s.icon}
-            </div>
-          ))}
-        </div>
-
-        <div className='footer-links'>
-          <h4 className='links-title desktop-only'>{generalInfoTitle}</h4>
-          <div className='links-grid desktop-only'>
-            {footerJson.links.slice(3).map((link, idx) => (
-              <a
-                key={`footer-link-${idx}`}
-                className='footer-link underline-animation'
-                onClick={() => openLink(link.value)}
+          <div className='footer-socials'>
+            {socials.map((s) => (
+              <div
+                key={s.key}
+                className='social-icon'
+                onClick={() => openLink(s.url)}
+                aria-label={s.key}
               >
-                {link.title[lang]}
-              </a>
+                {s.icon}
+              </div>
             ))}
           </div>
 
-          {renderAccordion()}
+          <div className='footer-links'>
+            <h4 className='links-title desktop-only'>{generalInfoTitle}</h4>
+            <div className='links-grid desktop-only'>
+              {footerJson.links.slice(3).map((link, idx) => (
+                <a
+                  key={`footer-link-${idx}`}
+                  className='footer-link underline-animation'
+                  onClick={() => openLink(link.value)}
+                >
+                  {link.title[lang]}
+                </a>
+              ))}
+            </div>
+
+            {renderAccordion()}
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+      <DoobleFooter />
+    </>
   )
 }
