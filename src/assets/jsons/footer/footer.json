@@ -94,6 +94,10 @@
       "value": "https://www.facebook.com/kanatpage"
     },
     {
+      "title": { "he": "Twitter", "en": "Twitter" },
+      "value": "https://twitter.com/kanat_israel"
+    },
+    {
       "title": { "he": "Instagram", "en": "Instagram" },
       "value": "https://www.instagram.com/kanat.israel/#"
     },
@@ -104,6 +108,10 @@
     {
       "title": { "he": "LinkedIn", "en": "LinkedIn" },
       "value": "https://www.linkedin.com/company/kanat-insurance/"
+    },
+    {
+      "title": { "he": "Telegram", "en": "Telegram" },
+      "value": "https://t.me/kanat_israel"
     }
   ]
 }

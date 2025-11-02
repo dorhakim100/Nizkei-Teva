@@ -13,6 +13,8 @@ import PlaceIcon from '@mui/icons-material/Place'
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
 import MailIcon from '@mui/icons-material/Mail'
 
+import footerJson from '../../assets/jsons/footer/footer.json'
+
 export function AppFooter() {
   const navigate = useNavigate()
 
