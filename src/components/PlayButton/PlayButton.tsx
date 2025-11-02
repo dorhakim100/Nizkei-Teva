@@ -1,5 +1,3 @@
-import React from 'react'
-
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline'
 
