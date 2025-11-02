@@ -9,7 +9,7 @@ import { RootState } from '../../store/store'
 
 // import { DropdownMenu } from '../DropdownMenu/DropdownMenu'
 
-import logoImg from '../../../public/logo.png'
+import logoImg from '../../../public/logos/logo.png'
 import darkMode from '../../../public/icons/dark-mode.svg'
 import search from '../../../public/icons/search.svg'
 import profile from '../../../public/icons/profile.svg'
