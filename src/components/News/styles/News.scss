@@ -6,7 +6,7 @@
   gap: 2rem;
   justify-items: center;
   margin-top: 2rem;
-  // padding-inline-start: 150px;
+
   h3 {
     text-align: start;
     justify-self: start;
@@ -34,7 +34,7 @@
   // max-width: 1470px;
 
   @media (min-width: $narrow-breakpoint) {
-    padding: 1em 150px;
+    padding: 1em $side-padding;
   }
 
   .news-title {

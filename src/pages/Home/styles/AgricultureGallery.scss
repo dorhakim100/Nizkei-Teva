@@ -6,7 +6,7 @@
 
   .content-container {
     display: grid;
-    padding: 1em 150px;
+    padding: 1em $side-padding;
     grid-template-columns: auto 1fr;
     justify-items: center;
     gap: 30px;

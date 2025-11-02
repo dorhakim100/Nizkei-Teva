@@ -1,4 +1,3 @@
-// import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { RootState } from '../../store/store'
@@ -16,9 +15,6 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import TelegramIcon from '@mui/icons-material/Telegram'
-import PlaceIcon from '@mui/icons-material/Place'
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
-import MailIcon from '@mui/icons-material/Mail'
 
 import { CustomButton } from '../CustomButton/CustomButton'
 
@@ -61,6 +57,52 @@ export function AppFooter() {
   const lang = prefs.language as keyof Language
   const generalInfoTitle = lang === 'he' ? 'מידע כללי' : 'General information'
 
+  const renderContactTitle = (title: string) => {
+    switch (title) {
+      case 'phone':
+        return prefs.language === 'he' ? 'טלפון:' : 'Phone:'
+      case 'fax':
+        return prefs.language === 'he' ? 'פקס:' : 'Fax:'
+      case 'address':
+        return prefs.language === 'he' ? 'כתובת: ' : 'Address: '
+      case 'mail':
+        return prefs.language === 'he' ? 'דוא"ל:' : 'Email:'
+    }
+  }
+
+  const renderAccordion = () => {
+    return (
+      <>
+        <div className='mobile-only accordion-container'>
+          <Accordion
+            disableGutters
+            square
+            elevation={0}
+            className='footer-accordion'
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              {generalInfoTitle}
+            </AccordionSummary>
+            <AccordionDetails className='footer-accordion-details'>
+              <div className='links-grid'>
+                {footerJson.links.slice(3).map((link, idx) => (
+                  <a
+                    key={`footer-link-mobile-${idx}`}
+                    className='footer-link underline-animation'
+                    onClick={() => openLink(link.value)}
+                  >
+                    {link.title[lang]}
+                  </a>
+                ))}
+              </div>
+            </AccordionDetails>
+          </Accordion>
+        </div>
+        <Divider className='divider mobile-only' />
+      </>
+    )
+  }
+
   return (
     <footer
       className={`app-footer full ${prefs.isDarkMode ? 'dark-mode' : ''}`}
@@ -69,12 +111,7 @@ export function AppFooter() {
         <div className='footer-logo'>
           <img src={'/logos/image 60.png'} alt='Kanat logo' />
         </div>
-
-        <Divider
-          orientation='vertical'
-          flexItem
-          className='divider desktop-only'
-        />
+        <Divider className='divider mobile-only' />
 
         <div className='footer-cta'>
           <h3 className='footer-title'>{footerJson.title[lang]}</h3>
@@ -87,31 +124,39 @@ export function AppFooter() {
 
           <div className='footer-contact'>
             <div className='contact-row'>
-              <PlaceIcon />
-              <span>{footerJson.address[lang]}</span>
+              <span>
+                {renderContactTitle('address')}
+                {footerJson.address[lang].split('\n').map((line, idx) => (
+                  <span key={`footer-address-line-${idx}`}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </span>
             </div>
             <div className='contact-row'>
-              <LocalPhoneIcon />
+              {renderContactTitle('phone')}
               <a
-                className='underline-animation'
+                className='pointer underline-animation'
                 onClick={() => openLink(`tel:${footerJson.links[0].value}`)}
               >
                 {footerJson.links[0].value}
               </a>
             </div>
             <div className='contact-row'>
-              <LocalPhoneIcon />
+              {renderContactTitle('fax')}
+
               <a
-                className='underline-animation'
+                className='pointer underline-animation'
                 onClick={() => openLink(`tel:${footerJson.links[1].value}`)}
               >
                 {footerJson.links[1].value}
               </a>
             </div>
             <div className='contact-row'>
-              <MailIcon />
+              {renderContactTitle('mail')}
               <a
-                className='underline-animation'
+                className='pointer underline-animation'
                 onClick={() => openLink(`mailto:${footerJson.links[2].value}`)}
               >
                 {footerJson.links[2].value}
@@ -132,14 +177,8 @@ export function AppFooter() {
           ))}
         </div>
 
-        <Divider
-          orientation='vertical'
-          flexItem
-          className='divider desktop-only'
-        />
-
         <div className='footer-links'>
-          <h4 className='links-title'>{generalInfoTitle}</h4>
+          <h4 className='links-title desktop-only'>{generalInfoTitle}</h4>
           <div className='links-grid desktop-only'>
             {footerJson.links.slice(3).map((link, idx) => (
               <a
@@ -152,34 +191,7 @@ export function AppFooter() {
             ))}
           </div>
 
-          <div className='mobile-only accordion-container'>
-            <Accordion
-              disableGutters
-              square
-              elevation={0}
-              className='footer-accordion'
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                className='footer-accordion-summary'
-              >
-                {generalInfoTitle}
-              </AccordionSummary>
-              <AccordionDetails className='footer-accordion-details'>
-                <div className='links-grid'>
-                  {footerJson.links.slice(3).map((link, idx) => (
-                    <a
-                      key={`footer-link-mobile-${idx}`}
-                      className='footer-link underline-animation'
-                      onClick={() => openLink(link.value)}
-                    >
-                      {link.title[lang]}
-                    </a>
-                  ))}
-                </div>
-              </AccordionDetails>
-            </Accordion>
-          </div>
+          {renderAccordion()}
         </div>
       </div>
     </footer>
