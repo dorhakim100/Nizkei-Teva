@@ -2,6 +2,9 @@
 
 A responsive, bilingual (HE/EN) website built with React, TypeScript, Redux, SCSS, Vite, and MUI. The project emphasizes a pixel‑perfect implementation against Figma designs, robust component composition, and JSON‑driven content.
 
+### Related Links:
+- 🔗 [Live Site](https://nizkei-teva.onrender.com/)
+
 ### Tech stack
 
 - **Build**: Vite + TypeScript
