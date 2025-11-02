@@ -32,6 +32,12 @@
       rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
 
+  @media (max-width: $mobile-width) {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+  }
+
   .title-container {
     display: flex;
     justify-content: space-between;
