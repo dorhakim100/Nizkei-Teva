@@ -16,7 +16,11 @@ export function QuickServices() {
     <section className={`quick-services-container ${prefs.language}`}>
       <div className='title-container pointer'>
         <h4>{quickServicesJson.title[prefs.language as keyof Language]}</h4>
-        <KeyboardArrowLeftIcon />
+        {prefs.language === 'en' ? (
+          <KeyboardArrowRightIcon />
+        ) : (
+          <KeyboardArrowLeftIcon />
+        )}
       </div>
       <Divider className='divider' />
       <div className='quick-services-list'>
