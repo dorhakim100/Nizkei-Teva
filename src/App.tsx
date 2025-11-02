@@ -13,6 +13,7 @@ import { RootState } from './store/store.ts'
 import './App.css'
 import { Prefs } from './types/system/Prefs.ts'
 import { NewsBanner } from './components/NewsBanner/NewsBanner'
+import { QuickServices } from './components/QuickServices/QuickServices'
 
 function App() {
   const prefs = useSelector(
@@ -45,7 +46,7 @@ function App() {
   return (
     <>
       <AppHeader routes={routes} />
-
+      <QuickServices />
       <main
         className={`main ${prefs.isDarkMode ? 'dark-mode' : ''} ${
           prefs.isEnglish ? 'english' : ''

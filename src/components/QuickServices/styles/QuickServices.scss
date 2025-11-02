@@ -1,0 +1,14 @@
+.quick-services-container {
+  position: fixed;
+  top: calc($header-height-desktop + 100px);
+  left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  width: 200px;
+  height: 400px;
+  background-color: $white;
+  z-index: 1000;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
