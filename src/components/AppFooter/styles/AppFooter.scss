@@ -24,18 +24,22 @@
   }
 
   .footer-grid {
-    // width: calc(100% - $side-padding * 2);
-    // margin: 0 auto;
-    justify-self: center;
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: repeat(2, 1fr);
 
     align-items: start;
     gap: 2rem;
+    width: 100%;
+    padding: 0 $side-padding;
+
+    @media (max-width: $medium-breakpoint) {
+      padding: 0 1rem;
+    }
 
     @media (max-width: $narrow-breakpoint) {
       display: grid;
+      justify-self: center;
 
       grid-template-columns: 1fr;
       justify-items: center;
