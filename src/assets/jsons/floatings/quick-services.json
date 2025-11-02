@@ -9,28 +9,28 @@
         "he": "הפוליסות שלי",
         "en": "My Policies"
       },
-      "icon": "../../../../public/icons/my-policies.svg"
+      "icon": "/icons/my-policies.svg"
     },
     {
       "title": {
         "he": "הגשת בקשה להודעות נזק",
         "en": "Submit a request for current notices"
       },
-      "icon": "../../../../public/icons/submit-request.svg"
+      "icon": "/icons/submit-request.svg"
     },
     {
       "title": {
         "he": "בירור סטטוס תביעה",
         "en": "Claim status clarification"
       },
-      "icon": "../../../../public/icons/claim-status.svg"
+      "icon": "/icons/claim-status.svg"
     },
     {
       "title": {
         "he": "עדכון פרטים אישיים",
         "en": "Update personal details"
       },
-      "icon": "../../../../public/icons/update-personal-details.svg"
+      "icon": "/icons/update-personal-details.svg"
     }
   ]
 }

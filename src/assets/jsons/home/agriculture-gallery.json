@@ -15,18 +15,18 @@
     "link": "https://gallery.kanat.co.il/",
     "color": "secondary"
   },
-  "backgroundImg": "../../../../public/imgs/image 112.png",
-  "paleLogo": "../../../../public/imgs/image 49.png",
+  "backgroundImg": "/imgs/image 112.png",
+  "paleLogo": "/imgs/image 49.png",
   "imgs": [
     {
-      "img": "../../../../public/imgs/image 97.png",
+      "img": "/imgs/image 97.png",
       "text": {
         "he": "צילום: אשר גולן",
         "en": "Photo: Asher Golan"
       }
     },
     {
-      "img": "../../../../public/imgs/image 98.png",
+      "img": "/imgs/image 98.png",
       "text": {
         "he": "צילום: בינה כהן",
         "en": "Photo: Bina Cohen"

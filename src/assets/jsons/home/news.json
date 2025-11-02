@@ -14,7 +14,7 @@
   "items": [
     {
       "id": "n1",
-      "media": "../../../../public/imgs/image 54.png",
+      "media": "/imgs/image 54.png",
       "title": {
         "he": "שוק האיכרים נפתח",
         "en": "Farmers Market Opens"
@@ -42,7 +42,7 @@
     },
     {
       "id": "n3",
-      "media": "../../../../public/imgs/image 102.png",
+      "media": "/imgs/image 102.png",
       "title": {
         "he": "תעודה אורגנית חדשה",
         "en": "New Organic Certification"
@@ -56,7 +56,7 @@
     },
     {
       "id": "n4",
-      "media": "../../../../public/imgs/image 105.png",
+      "media": "/imgs/image 105.png",
       "title": {
         "he": "מרכז מבקרים חדש",
         "en": "New Visitor Center"

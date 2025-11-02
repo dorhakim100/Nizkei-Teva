@@ -9,21 +9,21 @@
         "he": "ענפי הצומח",
         "en": "Plants branches"
       },
-      "img": "../../../../public/imgs/image 114.png"
+      "img": "/imgs/image 114.png"
     },
     {
       "title": {
         "he": "ענפי החי",
         "en": "Animals branches"
       },
-      "img": "../../../../public/imgs/image 110.png"
+      "img": "/imgs/image 110.png"
     },
     {
       "title": {
         "he": "ענפים כלליים",
         "en": "General branches"
       },
-      "img": "../../../../public/imgs/image 108.png"
+      "img": "/imgs/image 108.png"
     }
   ]
 }
