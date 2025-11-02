@@ -1,0 +1,18 @@
+.floating-buttons-container {
+  position: fixed;
+  top: 40vh;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+
+  &.en {
+    right: auto;
+    left: 20px;
+  }
+}

@@ -4,13 +4,13 @@ export interface FloatingButtonProps {
   color: string
 }
 
-export function FloatingButton({ icon, onClick }: FloatingButtonProps) {
+export function FloatingButton({ icon, onClick, color }: FloatingButtonProps) {
   return (
-    <div className='floating-button-container'>
+    <div
+      className={`floating-button-container ${color} pointer`}
+      onClick={onClick}
+    >
       <img src={icon} alt='floating button' />
-      <button onClick={onClick}>
-        <img src={icon} alt='floating button' />
-      </button>
     </div>
   )
 }

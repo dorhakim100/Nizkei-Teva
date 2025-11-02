@@ -13,6 +13,8 @@ import { RootState } from './store/store.ts'
 import './App.css'
 import { Prefs } from './types/system/Prefs.ts'
 import { NewsBanner } from './components/NewsBanner/NewsBanner'
+import { FloatingButtonsContainer } from './components/FloatingButtonsContainer/FloatingButtonsContainer.tsx'
+import floatingButtonsJson from './assets/jsons/floatings/floating-buttons.json'
 
 function App() {
   const prefs = useSelector(
@@ -45,6 +47,13 @@ function App() {
   return (
     <>
       <AppHeader routes={routes} />
+      <FloatingButtonsContainer
+        items={floatingButtonsJson.items.map((item) => ({
+          icon: item.icon,
+          color: item.color,
+          onClick: () => {},
+        }))}
+      />
 
       <main
         className={`main ${prefs.isDarkMode ? 'dark-mode' : ''} ${
