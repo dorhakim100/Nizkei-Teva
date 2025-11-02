@@ -1,0 +1,109 @@
+{
+  "title": {
+    "he": "אנחנו פה בשבילך ונשמח לעזור!",
+    "en": "We're here for you and we're happy to help!"
+  },
+  "button": {
+    "text": {
+      "he": "צרו איתנו קשר",
+      "en": "Contact us"
+    },
+    "color": "secondary",
+    "link": "https://www.kanat.co.il/contact-us/"
+  },
+  "address": {
+    "he": "דרך מנחם בגין 74,ת.ד 51231",
+    "en": "Menachem Begin St. 74, PO Box 51231"
+  },
+  "links": [
+    {
+      "title": { "he": "טלפון", "en": "Phone" },
+      "value": "03-6270200"
+    },
+    {
+      "title": { "he": "פקס", "en": "Fax" },
+      "value": "03-6270206"
+    },
+    {
+      "title": { "he": "דוא\"ל", "en": "Email" },
+      "value": "kanat@kanat.co.il"
+    },
+    {
+      "title": { "he": "ארכיון חוזי ביטוח", "en": "Insurance Policy Archive" },
+      "value": "https://www.kanat.co.il/insurance-contracts-archive/"
+    },
+    {
+      "title": { "he": "פניות הציבור", "en": "Public Inquiries" },
+      "value": "https://www.kanat.co.il/%d7%a4%d7%a0%d7%99%d7%95%d7%aa-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8/"
+    },
+    {
+      "title": { "he": "אמנת שירות", "en": "Service Charter" },
+      "value": "https://www.kanat.co.il/%d7%90%d7%9e%d7%a0%d7%aa-%d7%a9%d7%99%d7%a8%d7%95%d7%aa/"
+    },
+    {
+      "title": { "he": "מאגרים ספקים", "en": "Supplier Portal" },
+      "value": "https://www.kanat.co.il/%d7%9e%d7%90%d7%92%d7%a8-%d7%a1%d7%a4%d7%a7%d7%99%d7%9d/"
+    },
+    {
+      "title": { "he": "חופש המידע", "en": "Open Data" },
+      "value": "https://www.kanat.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%97%d7%95%d7%a4%d7%a9-%d7%94%d7%9e%d7%99%d7%93%d7%a2/"
+    },
+    {
+      "title": { "he": "מדיניות שימוש במידע פלילי", "en": "Legal Disclaimer" },
+      "value": "https://www.kanat.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a9%d7%99%d7%9e%d7%95%d7%a9-%d7%91%d7%9e%d7%99%d7%93%d7%a2-%d7%a4%d7%9c%d7%99%d7%9c%d7%99/"
+    },
+    {
+      "title": { "he": "דו״ח אחריות ותיקים", "en": "Accessibility Statement" },
+      "value": "https://www.kanat.co.il/wp-content/uploads/2025/06/Senior-Citizen-Report-2025-FINAL_WEB-%D7%9E%D7%95%D7%A0%D7%92%D7%A9.pdf"
+    },
+    {
+      "title": { "he": "מפת האתר", "en": "Site Map" },
+      "value": "https://www.kanat.co.il/%d7%9e%d7%a4%d7%aa-%d7%94%d7%90%d7%aa%d7%a8/"
+    },
+    {
+      "title": { "he": "מדריך שאלות ותשובות", "en": "FAQ Guide" },
+      "value": "https://www.kanat.co.il/faq/%d7%a9%d7%90%d7%9c%d7%95%d7%aa-%d7%91%d7%a0%d7%95%d7%a9%d7%90-%d7%96%d7%9b%d7%90%d7%95%d7%aa-%d7%9c%d7%a4%d7%99%d7%a6%d7%95%d7%99/"
+    },
+    {
+      "title": { "he": "הצהרת נגישות", "en": "Accessibility Declaration" },
+      "value": "https://www.kanat.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/"
+    },
+    {
+      "title": {
+        "he": "הסדרי נגישות בקנט",
+        "en": "Accessibility Arrangements"
+      },
+      "value": "https://www.kanat.co.il/%d7%94%d7%a1%d7%93%d7%a8%d7%99-%d7%94%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa-%d7%91%d7%a7%d7%a0%d7%98/"
+    },
+    {
+      "title": { "he": "הדרי נגישות", "en": "Accessibility Instructions" },
+      "value": "https://www.kanat.co.il/%d7%a8%d7%9b%d7%96%d7%99-%d7%a0%d7%92%d7%99%d7%a9%d7%95%d7%aa/"
+    },
+    {
+      "title": { "he": "מכרזים", "en": "Tenders" },
+      "value": "https://www.kanat.co.il/tenders/active-tenders/"
+    },
+    {
+      "title": { "he": "חדשים", "en": "News" },
+      "value": "https://www.kanat.co.il/jobs/"
+    }
+  ],
+  "socials": [
+    {
+      "title": { "he": "Facebook", "en": "Facebook" },
+      "value": "https://www.facebook.com/kanatpage"
+    },
+    {
+      "title": { "he": "Instagram", "en": "Instagram" },
+      "value": "https://www.instagram.com/kanat.israel/#"
+    },
+    {
+      "title": { "he": "YouTube", "en": "YouTube" },
+      "value": "https://www.youtube.com/channel/UCnGaZV71icJsy49LaRLHbhA"
+    },
+    {
+      "title": { "he": "LinkedIn", "en": "LinkedIn" },
+      "value": "https://www.linkedin.com/company/kanat-insurance/"
+    }
+  ]
+}

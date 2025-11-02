@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
+  background-color: $primary-color;
+  color: $white;
 
   min-height: 3.5rem;
   // font-size: 1.2em;
@@ -11,10 +13,6 @@
   align-items: center;
   justify-content: space-between;
   justify-items: center;
-
-  background-color: white;
-  // background-color: $primary-light-blue;
-  // color: $bold-navy;
 
   &.dark-mode {
     background-color: $very-dark-gray;
