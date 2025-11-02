@@ -10,6 +10,7 @@ import galleryJson from '../../assets/jsons/home/gallery.json'
 import { GalleryImgs } from './GalleryImgs'
 import { AgricultureGallery } from './AgricultureGallery'
 import { News } from '../../components/News/News'
+import { QuickServices } from '../../components/QuickServices/QuickServices'
 
 import newsJson from '../../assets/jsons/home/news.json'
 
@@ -21,9 +22,11 @@ export function Home() {
   return (
     <div className='home-container'>
       <FadeCarousel slides={carouselJson.slides} />
+      <QuickServices />
       <h3 className='gallery-title'>
         {galleryJson.title[prefs.language as keyof Language]}
       </h3>
+
       <GalleryImgs imgs={galleryJson.imgs} />
       <AgricultureGallery />
 
