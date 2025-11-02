@@ -33,10 +33,6 @@
   }
   // max-width: 1470px;
 
-  @media (min-width: $narrow-breakpoint) {
-    padding: 1em $side-padding;
-  }
-
   .news-title {
     margin: 0;
   }
@@ -46,10 +42,14 @@
     display: grid;
     gap: 0rem 2rem;
     justify-self: stretch;
+    padding: 1em $side-padding;
 
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
 
+    @media (max-width: $medium-breakpoint) {
+      padding: 1em;
+    }
     @media (max-width: $narrow-breakpoint) {
       display: block;
       padding: 1em;
@@ -61,6 +61,7 @@
     .news-card {
       &:first-of-type {
         grid-column: 1/2;
+
         grid-row: 1/-1;
         @media (min-width: $narrow-breakpoint) {
           justify-self: stretch;
