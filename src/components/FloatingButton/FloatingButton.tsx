@@ -1,6 +1,7 @@
 export interface FloatingButtonProps {
   icon: string
   onClick: () => void
+  color: string
 }
 
 export function FloatingButton({ icon, onClick }: FloatingButtonProps) {
