@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "icon": "../../../../public/icons/whatsapp.svg",
+      "color": "secondary"
+    },
+    {
+      "icon": "../../../../public/icons/communication.svg",
+      "color": "primary"
+    }
+  ]
+}
